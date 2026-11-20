@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transmisión Prioritaria | Sábado 21 de Nov - 7:00 PM</title>
+  <title>INFORME PRIORITARIO // Sábado 21 de Nov - 1900 HRS</title>
 
-  <!-- Etiquetas Open Graph para vista previa en WhatsApp -->
-  <meta property="og:title" content="Transmisión Prioritaria — Sábado 21 de Noviembre" />
-  <meta property="og:description" content="Protocolo de encuentro activado: 7:00 PM en Km 7 vía La Romelia - El Pollo, al frente del CDA Villa." />
+  <!-- Vista previa al compartir enlace en WhatsApp -->
+  <meta property="og:title" content="TRANSMSIÓN UNSC // Sábado 21 de Noviembre - 7:00 PM" />
+  <meta property="og:description" content="Atención Spartans: coordenadas fijadas en Km 7 vía La Romelia - El Pollo, al frente del CDA Villa. ¡Inicia la transmisión!" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#060b19" />
+  <meta name="theme-color" content="#040812" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg-dark: #050914;
-      --card-bg: rgba(10, 18, 36, 0.86);
-      --holo-cyan: #38bdf8;
-      --holo-bright: #7dd3fc;
-      --holo-violet: #a855f7;
-      --holo-glow: rgba(56, 189, 248, 0.32);
-      --violet-glow: rgba(168, 85, 247, 0.28);
-      --text-main: #f0f9ff;
-      --text-muted: #94a3b8;
+      --bg-deep: #030711;
+      --panel-bg: rgba(8, 16, 32, 0.9);
+      --halo-blue: #38bdf8;
+      --halo-ice: #bae6fd;
+      --halo-alert: #f97316;
+      --halo-green: #4ade80;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
     }
 
     * {
@@ -35,22 +34,21 @@
     }
 
     body {
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-dark);
+      font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-deep);
       background-image:
-        radial-gradient(circle at 20% 15%, rgba(168, 85, 247, 0.18), transparent 42%),
-        radial-gradient(circle at 80% 85%, rgba(56, 189, 248, 0.16), transparent 45%),
-        linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.16), transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(14, 116, 144, 0.18), transparent 50%),
+        linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px 14px;
+      padding: 16px 12px;
       overflow-x: hidden;
-      position: relative;
     }
 
     #confetti-canvas {
@@ -59,344 +57,372 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 50;
+      z-index: 60;
     }
 
     .card {
       width: 100%;
-      max-width: 490px;
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(56, 189, 248, 0.28);
-      border-radius: 26px;
-      padding: 24px 20px 28px;
+      max-width: 480px;
+      background: var(--panel-bg);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 22px;
+      padding: 18px 16px 24px;
       box-shadow:
-        0 25px 65px rgba(0, 0, 0, 0.78),
-        0 0 38px var(--holo-glow),
-        inset 0 0 24px rgba(168, 85, 247, 0.12);
-      text-align: center;
+        0 25px 60px rgba(0, 0, 0, 0.85),
+        0 0 35px rgba(56, 189, 248, 0.22),
+        inset 0 0 20px rgba(56, 189, 248, 0.08);
       position: relative;
       z-index: 10;
-      animation: fadeUp 0.7s ease-out;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Cabecera UNSC / IA */
-    .top-bar {
+    /* Cabecera UNSC */
+    .hud-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .badge {
+    .unsc-tag {
       display: inline-flex;
       align-items: center;
       gap: 7px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      color: var(--halo-ice);
       background: rgba(56, 189, 248, 0.12);
       border: 1px solid rgba(56, 189, 248, 0.35);
-      color: var(--holo-bright);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      padding: 6px 12px;
+      padding: 5px 11px;
       border-radius: 999px;
     }
 
-    .pulse-dot {
+    .rec-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background-color: var(--holo-cyan);
-      box-shadow: 0 0 10px var(--holo-cyan);
-      animation: pulse 1.5s infinite;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+      animation: blink 1.2s infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.45); opacity: 0.45; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
     }
 
-    .voice-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.28), rgba(56, 189, 248, 0.25));
-      border: 1px solid rgba(192, 132, 252, 0.55);
-      color: #f3e8ff;
+    .audio-ctrl {
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 700;
       letter-spacing: 0.8px;
-      padding: 6px 12px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #0284c7, #1d4ed8);
+      border: 1px solid rgba(186, 230, 253, 0.5);
+      padding: 5px 11px;
       border-radius: 999px;
       cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .voice-btn:hover {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(56, 189, 248, 0.4));
-      transform: translateY(-1px);
+    .audio-ctrl:hover {
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
     }
 
-    .voice-btn.active {
-      background: linear-gradient(135deg, #9333ea, #0284c7);
-      border-color: #e9d5ff;
-      box-shadow: 0 0 20px rgba(168, 85, 247, 0.55);
-    }
-
-    /* Escenario Holográfico (4 Escenas) */
-    .holo-stage {
+    /* Visor Cinemático 4 Escenas */
+    .cinema-viewport {
       position: relative;
       width: 100%;
-      border-radius: 20px;
-      background: radial-gradient(ellipse at 50% 85%, rgba(168, 85, 247, 0.22) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(4, 8, 20, 0.92) 100%);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      height: 295px;
+      border-radius: 16px;
       overflow: hidden;
-      margin-bottom: 18px;
-      box-shadow: inset 0 0 30px rgba(56, 189, 248, 0.14);
-    }
-
-    /* Líneas de escaneo CRT/Holograma */
-    .holo-stage::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(56, 189, 248, 0.04) 0px,
-        rgba(56, 189, 248, 0.04) 1px,
-        transparent 1px,
-        transparent 4px
-      );
-      pointer-events: none;
-      z-index: 3;
+      background: #02050c;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+      margin-bottom: 14px;
     }
 
     #holo-canvas {
       display: block;
       width: 100%;
-      height: 235px;
+      height: 100%;
     }
 
-    /* Subtítulo / Diálogo Holográfico */
-    .holo-dialogue {
-      position: relative;
-      z-index: 4;
-      background: rgba(5, 11, 26, 0.85);
-      border-top: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 12px 14px;
-      text-align: left;
+    /* Overlay inicial tipo "INSERT CHIP / INICIAR" */
+    .start-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(6, 18, 40, 0.82), rgba(2, 5, 12, 0.94));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      z-index: 15;
+      padding: 20px;
+      text-align: center;
+      transition: opacity 0.4s ease;
     }
 
-    .scene-header {
+    .start-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .chip-ring {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid rgba(56, 189, 248, 0.7);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 5px;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.45), inset 0 0 15px rgba(56, 189, 248, 0.35);
+      animation: spinSlow 8s linear infinite;
     }
 
-    .scene-tag {
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .start-btn {
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      color: #c084fc;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      color: #030711;
+      background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+      border: none;
+      padding: 12px 22px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.65);
       text-transform: uppercase;
     }
 
-    .scene-dots {
-      display: flex;
-      gap: 6px;
+    .start-hint {
+      font-size: 0.85rem;
+      color: var(--halo-ice);
+      letter-spacing: 0.5px;
     }
 
-    .scene-dot {
+    /* Franja de subtítulos estilo TikTok del video */
+    .tiktok-subtitle-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 34px;
+      background: linear-gradient(
+        90deg,
+        rgba(226, 232, 240, 0.78) 0%,
+        rgba(255, 255, 255, 0.94) 50%,
+        rgba(203, 213, 225, 0.78) 100%
+      );
+      color: #0f172a;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 0.98rem;
+      line-height: 1.2;
+      padding: 6px 12px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+      z-index: 8;
+      letter-spacing: 0.2px;
+    }
+
+    .tiktok-subtitle-bar.chief-line {
+      background: linear-gradient(
+        90deg,
+        rgba(20, 45, 30, 0.88) 0%,
+        rgba(34, 84, 52, 0.95) 50%,
+        rgba(20, 45, 30, 0.88) 100%
+      );
+      color: #dcfce7;
+      border-top: 1px solid rgba(74, 222, 128, 0.5);
+      border-bottom: 1px solid rgba(74, 222, 128, 0.5);
+    }
+
+    /* Controles inferiores del visor (4 escenas) */
+    .scene-controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 30px;
+      background: rgba(3, 7, 17, 0.9);
+      border-top: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 9;
+    }
+
+    .scene-label {
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.62rem;
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: var(--halo-blue);
+      letter-spacing: 1px;
+    }
+
+    .scene-pills {
+      display: flex;
+      gap: 5px;
+    }
+
+    .scene-pill {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
       font-weight: 700;
       padding: 2px 7px;
-      border-radius: 6px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: var(--text-muted);
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--text-dim);
       cursor: pointer;
-      transition: all 0.2s ease;
     }
 
-    .scene-dot.active {
-      background: rgba(168, 85, 247, 0.35);
-      border-color: #c084fc;
-      color: #ffffff;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.45);
-    }
-
-    .dialogue-text {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      color: #e0f2fe;
-      min-height: 38px;
-    }
-
-    .dialogue-text strong {
-      color: #7dd3fc;
-    }
-
-    .progress-bar {
-      height: 2px;
-      width: 100%;
-      background: rgba(56, 189, 248, 0.12);
-      margin-top: 8px;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #a855f7, #38bdf8);
-      transition: width 0.1s linear;
+    .scene-pill.active {
+      background: #38bdf8;
+      color: #030711;
+      border-color: #bae6fd;
     }
 
     /* Título y Cuenta Regresiva */
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.48rem;
+      font-size: 1.32rem;
       font-weight: 900;
-      letter-spacing: 0.5px;
-      line-height: 1.2;
-      margin-bottom: 6px;
-      background: linear-gradient(135deg, #ffffff 25%, #7dd3fc 65%, #c084fc 100%);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 30%, #7dd3fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
     }
 
-    .subtitle {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 18px;
+    .mission-sub {
+      font-size: 0.92rem;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+      font-weight: 600;
     }
 
-    .countdown-label {
+    .countdown-title {
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.68rem;
-      text-transform: uppercase;
+      font-size: 0.64rem;
       letter-spacing: 1.6px;
-      color: var(--holo-bright);
-      margin-bottom: 10px;
+      color: var(--halo-blue);
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .time-box {
-      background: rgba(6, 13, 28, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.22);
-      border-radius: 14px;
-      padding: 12px 4px;
-      box-shadow: inset 0 0 14px rgba(56, 189, 248, 0.08);
+      background: rgba(4, 10, 22, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 12px;
+      padding: 10px 4px;
+      box-shadow: inset 0 0 12px rgba(56, 189, 248, 0.1);
     }
 
-    .time-value {
+    .time-val {
       display: block;
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: var(--holo-cyan);
-      text-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+      font-size: 1.48rem;
+      font-weight: 900;
+      color: #7dd3fc;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
       line-height: 1.1;
     }
 
-    .time-unit {
+    .time-lbl {
       display: block;
-      font-size: 0.66rem;
+      font-size: 0.68rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--text-muted);
-      margin-top: 5px;
-      font-weight: 600;
+      color: var(--text-dim);
+      margin-top: 3px;
     }
 
     .live-banner {
       display: none;
-      background: linear-gradient(135deg, #9333ea, #0284c7);
+      background: linear-gradient(135deg, #0284c7, #2563eb);
       color: #ffffff;
       font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
       font-weight: 700;
-      font-size: 0.95rem;
-      padding: 14px;
-      border-radius: 14px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
     }
 
-    /* Recordatorio de Fecha, Hora y Lugar */
-    .details-box {
-      background: rgba(56, 189, 248, 0.04);
-      border: 1px solid rgba(56, 189, 248, 0.18);
-      border-radius: 18px;
-      padding: 15px;
-      text-align: left;
+    /* Detalles de la Misión */
+    .intel-box {
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 14px;
+      padding: 13px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 16px;
+      text-align: left;
     }
 
-    .detail-item {
+    .intel-row {
       display: flex;
       align-items: flex-start;
-      gap: 11px;
+      gap: 10px;
     }
 
-    .detail-icon {
-      width: 35px;
-      height: 35px;
-      min-width: 35px;
-      border-radius: 10px;
-      background: rgba(168, 85, 247, 0.16);
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      color: #d8b4fe;
+    .intel-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.32);
+      color: #7dd3fc;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .detail-content strong {
+    .intel-text strong {
       display: block;
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.65rem;
-      text-transform: uppercase;
+      font-size: 0.6rem;
       letter-spacing: 1px;
-      color: var(--holo-bright);
-      margin-bottom: 2px;
+      color: var(--halo-blue);
+      text-transform: uppercase;
     }
 
-    .detail-content span {
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: var(--text-main);
-      line-height: 1.35;
+    .intel-text span {
       display: block;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #f8fafc;
+      line-height: 1.25;
     }
 
-    /* Botones de acción */
+    /* Botones Tácticos */
     .actions {
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 8px;
     }
 
     .btn {
@@ -405,15 +431,16 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 13px 16px;
-      border-radius: 13px;
-      font-family: inherit;
-      font-size: 0.92rem;
+      padding: 12px 14px;
+      border-radius: 11px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.74rem;
       font-weight: 700;
+      letter-spacing: 0.7px;
       text-decoration: none;
       cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
       border: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn:active {
@@ -421,47 +448,46 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #0284c7 0%, #7e22ce 100%);
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
       color: #ffffff;
-      border: 1px solid rgba(125, 211, 252, 0.45);
-      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.35);
+      border: 1px solid rgba(186, 230, 253, 0.5);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 12px 28px rgba(168, 85, 247, 0.45);
-      transform: translateY(-1px);
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
     }
 
-    .btn-secondary-group {
+    .btn-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 9px;
+      gap: 8px;
     }
 
-    .btn-secondary {
-      background: rgba(56, 189, 248, 0.08);
+    .btn-sec {
+      background: rgba(56, 189, 248, 0.1);
       color: #e0f2fe;
-      border: 1px solid rgba(56, 189, 248, 0.22);
-      font-size: 0.84rem;
-      padding: 11px 10px;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      font-size: 0.66rem;
+      padding: 11px 8px;
     }
 
-    .btn-secondary:hover {
-      background: rgba(56, 189, 248, 0.16);
+    .btn-sec:hover {
+      background: rgba(56, 189, 248, 0.2);
     }
 
-    .footer-note {
-      margin-top: 16px;
+    .footer-code {
+      margin-top: 14px;
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 1px;
-      color: var(--text-muted);
+      font-size: 0.6rem;
+      letter-spacing: 1.2px;
+      color: var(--text-dim);
     }
 
     @media (max-width: 380px) {
-      .time-value { font-size: 1.35rem; }
-      h1 { font-size: 1.25rem; }
-      .btn-secondary-group { grid-template-columns: 1fr; }
+      .cinema-viewport { height: 265px; }
+      .time-val { font-size: 1.28rem; }
+      .btn-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -469,110 +495,117 @@
 
   <canvas id="confetti-canvas"></canvas>
 
-  <!-- Audio opcional: si subes cortana.mp3 a tu repositorio GitHub, se reproducirá automáticamente -->
-  <audio id="cortana-audio" src="cortana.mp3" preload="auto"></audio>
+  <!-- Audio opcional: si subes cortana.mp3 al repo, se usará automáticamente -->
+  <audio id="custom-voice" src="cortana.mp3" preload="auto"></audio>
 
   <main class="card">
-    <div class="top-bar">
-      <div class="badge">
-        <span class="pulse-dot"></span>
-        IA CTN-0452 // REACH
+    <div class="hud-header">
+      <div class="unsc-tag">
+        <span class="rec-dot"></span>
+        IA CTN-0452 // TRANSMISIÓN
       </div>
-      <button type="button" class="voice-btn" id="voice-toggle">
-        🔊 Activar Voz IA
-      </button>
+      <button type="button" class="audio-ctrl" id="audio-toggle">🔊 ACTIVAR AUDIO</button>
     </div>
 
-    <!-- Escenario Holográfico de 4 Escenas -->
-    <section class="holo-stage" aria-label="Proyección Holográfica de 4 Escenas">
+    <!-- Visor Cinemático de 4 Escenas -->
+    <div class="cinema-viewport">
       <canvas id="holo-canvas"></canvas>
 
-      <div class="holo-dialogue">
-        <div class="scene-header">
-          <span class="scene-tag" id="scene-tag">ESCENA 01 // DESPLIEGUE</span>
-          <div class="scene-dots">
-            <button type="button" class="scene-dot active" data-scene="0">01</button>
-            <button type="button" class="scene-dot" data-scene="1">02</button>
-            <button type="button" class="scene-dot" data-scene="2">03</button>
-            <button type="button" class="scene-dot" data-scene="3">04</button>
-          </div>
+      <!-- Pantalla de inicio para desbloquear audio y música épica -->
+      <div class="start-overlay" id="start-overlay">
+        <div class="chip-ring">
+          <svg width="28" height="28" fill="none" stroke="#7dd3fc" stroke-width="2" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
         </div>
-        <div class="dialogue-text" id="dialogue-text">
-          <strong>"Enlace establecido."</strong> Tengo una transmisión prioritaria para ti este sábado.
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-fill"></div>
+        <button type="button" class="start-btn" id="start-btn">▶ INICIAR INFORME</button>
+        <p class="start-hint">Toca para activar el holograma, las voces y la música</p>
+      </div>
+
+      <!-- Franja de subtítulos estilo TikTok -->
+      <div class="tiktok-subtitle-bar" id="subtitle-bar">
+        Jefe, todo está preparado. Iniciando invitación...
+      </div>
+
+      <!-- Selector de las 4 escenas -->
+      <div class="scene-controls">
+        <span class="scene-label" id="scene-label">01 // DESPLIEGUE</span>
+        <div class="scene-pills">
+          <button type="button" class="scene-pill active" data-idx="0">01</button>
+          <button type="button" class="scene-pill" data-idx="1">02</button>
+          <button type="button" class="scene-pill" data-idx="2">03</button>
+          <button type="button" class="scene-pill" data-idx="3">04</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <h1>¡Nos vemos este sábado!</h1>
-    <p class="subtitle">Revisa los parámetros de la misión y prepárate para el encuentro.</p>
+    <h1>¡Atención, Spartans!</h1>
+    <p class="mission-sub">Protocolo de encuentro activado — Sábado 21 de Noviembre</p>
 
-    <div class="countdown-label" id="countdown-title">Tiempo restante para el encuentro</div>
+    <div class="countdown-title" id="countdown-title">Tiempo restante para las 1900 horas</div>
 
     <div class="countdown-grid" id="countdown-grid">
       <div class="time-box">
-        <span class="time-value" id="days">00</span>
-        <span class="time-unit">Días</span>
+        <span class="time-val" id="days">00</span>
+        <span class="time-lbl">Días</span>
       </div>
       <div class="time-box">
-        <span class="time-value" id="hours">00</span>
-        <span class="time-unit">Horas</span>
+        <span class="time-val" id="hours">00</span>
+        <span class="time-lbl">Horas</span>
       </div>
       <div class="time-box">
-        <span class="time-value" id="minutes">00</span>
-        <span class="time-unit">Min</span>
+        <span class="time-val" id="minutes">00</span>
+        <span class="time-lbl">Min</span>
       </div>
       <div class="time-box">
-        <span class="time-value" id="seconds">00</span>
-        <span class="time-unit">Seg</span>
+        <span class="time-val" id="seconds">00</span>
+        <span class="time-lbl">Seg</span>
       </div>
     </div>
 
     <div class="live-banner" id="live-banner">
-      ⚡ ¡PROTOCOLO INICIADO! TE ESPERAMOS YA MISMO ⚡
+      ⚡ ¡OPERACIÓN INICIADA! TE ESPERAMOS YA MISMO ⚡
     </div>
 
-    <!-- Recordatorio de Fecha, Hora y Lugar -->
-    <section class="details-box" aria-label="Detalles del evento">
-      <div class="detail-item">
-        <div class="detail-icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+    <!-- Datos de la Invitación -->
+    <section class="intel-box" aria-label="Datos del encuentro">
+      <div class="intel-row">
+        <div class="intel-icon">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
         </div>
-        <div class="detail-content">
-          <strong>Fecha Confirmada</strong>
+        <div class="intel-text">
+          <strong>Fecha de Operación</strong>
           <span>Sábado, 21 de noviembre de 2026</span>
         </div>
       </div>
 
-      <div class="detail-item">
-        <div class="detail-icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <div class="intel-row">
+        <div class="intel-icon">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
         </div>
-        <div class="detail-content">
-          <strong>Hora de Inicio</strong>
-          <span>7:00 PM (Hora Colombia)</span>
+        <div class="intel-text">
+          <strong>Hora Exacta</strong>
+          <span>7:00 PM (1900 Horas • Colombia)</span>
         </div>
       </div>
 
-      <div class="detail-item">
-        <div class="detail-icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <div class="intel-row">
+        <div class="intel-icon">
+          <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
         </div>
-        <div class="detail-content">
-          <strong>Coordenadas del Lugar</strong>
+        <div class="intel-text">
+          <strong>Coordenadas Descubiertas</strong>
           <span>Km 7 vía La Romelia – El Pollo, al frente del CDA Villa</span>
         </div>
       </div>
@@ -585,135 +618,232 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        Abrir en Google Maps
+        📍 ABRIR COORDENADAS EN GOOGLE MAPS
       </a>
 
-      <div class="btn-secondary-group">
+      <div class="btn-grid">
         <a
-          class="btn btn-secondary"
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Encuentro+S%C3%A1bado+21+de+Nov&dates=20261121T190000/20261121T230000&ctz=America/Bogota&location=Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa&details=Recordatorio:+Nos+vemos+a+las+7:00+PM+en+Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa."
+          class="btn btn-sec"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Encuentro+Spartans+-+S%C3%A1bado+21+de+Nov&dates=20261121T190000/20261121T230000&ctz=America/Bogota&location=Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa&details=Informe+UNSC:+Nos+vemos+a+las+7:00+PM+(1900+horas)+en+Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa."
           target="_blank"
           rel="noopener noreferrer"
         >
-          📅 Agendar
+          📲 INFILTRAR EN MÓVIL
         </a>
 
-        <button type="button" class="btn btn-secondary" id="copy-btn">
-          📋 Copiar lugar
+        <button type="button" class="btn btn-sec" id="copy-btn">
+          📋 COPIAR LUGAR
         </button>
       </div>
     </div>
 
-    <p class="footer-note">TRANSMISIÓN VERIFICADA • TE ESPERAMOS PUNTUAL</p>
+    <p class="footer-code">FIN DEL INFORME • ¡HASTA LUEGO, SPARTANS!</p>
   </main>
 
   <script>
     // =========================================================
-    // 1. DEFINICIÓN DE LAS 4 ESCENAS HOLOGRÁFICAS (CORTANA REACH)
+    // 1. GUIÓN DE LAS 4 ESCENAS INSPIRADAS EN EL VIDEO TIKTOK
     // =========================================================
     const scenes = [
       {
-        tag: "ESCENA 01 // DESPLIEGUE DE IA",
-        html: '<strong>"Enlace establecido."</strong> Tengo una transmisión prioritaria para ti este sábado.',
-        speech: "Enlace establecido. Hola, tengo una transmisión prioritaria para ti este sábado veintiuno de noviembre.",
-        duration: 6500
+        label: "01 // DESPLIEGUE",
+        duration: 8500,
+        steps: [
+          {
+            at: 0,
+            speaker: "cortana",
+            sub: "Jefe, todo está preparado. Iniciando invitación.",
+            voice: "Jefe, todo está preparado. Iniciando invitación."
+          },
+          {
+            at: 3000,
+            speaker: "chief",
+            sub: "JEFE: «Permiso concedido.»",
+            voice: "Permiso concedido."
+          },
+          {
+            at: 4800,
+            speaker: "cortana",
+            sub: "Estás invitado este sábado 21 de noviembre. ¡Prepárense, Spartans!",
+            voice: "Estás invitado este sábado veintiuno de noviembre. ¡Prepárense, Spartans!"
+          }
+        ]
       },
       {
-        tag: "ESCENA 02 // FECHA Y HORA",
-        html: 'Ventana programada: <strong>Sábado 21 de noviembre a las 7:00 PM</strong>. Marca tu cronómetro.',
-        speech: "La cita está programada para el sábado veintiuno de noviembre a las siete de la noche, hora Colombia.",
-        duration: 6800
+        label: "02 // OPERACIÓN 1900 HRS",
+        duration: 7500,
+        steps: [
+          {
+            at: 0,
+            speaker: "cortana",
+            sub: "Prepárense para una noche inolvidable. Es obligatorio asistir.",
+            voice: "Prepárense para una noche inolvidable. Es obligatorio asistir."
+          },
+          {
+            at: 3800,
+            speaker: "cortana",
+            sub: "Se tiene pensado comenzar exactamente a las 1900 horas (7:00 PM).",
+            voice: "Se tiene pensado comenzar exactamente a las diecinueve cero cero horas, siete de la noche."
+          }
+        ]
       },
       {
-        tag: "ESCENA 03 // COORDENADAS TÁCTICAS",
-        html: 'Punto de encuentro: <strong>Km 7 vía La Romelia – El Pollo</strong>, justo al frente del <strong>CDA Villa</strong>.',
-        speech: "Coordenadas fijadas: kilómetro siete, vía La Romelia, El Pollo, justo al frente del C D A Villa.",
-        duration: 7200
+        label: "03 // UBICACIONES DESCUBIERTAS",
+        duration: 8500,
+        steps: [
+          {
+            at: 0,
+            speaker: "cortana",
+            sub: "Un momento... me acaba de llegar una actualización.",
+            voice: "Un momento, me acaba de llegar una actualización."
+          },
+          {
+            at: 3200,
+            speaker: "cortana",
+            sub: "Coordenadas fijadas: Km 7 vía La Romelia – El Pollo, frente al CDA Villa.",
+            voice: "Coordenadas fijadas: kilómetro siete, vía La Romelia, El Pollo, al frente del C D A Villa."
+          }
+        ]
       },
       {
-        tag: "ESCENA 04 // SINCRONIZACIÓN",
-        html: 'Cuenta regresiva activa abajo. <strong>Abre el mapa</strong> para trazar tu ruta. ¡Nos vemos ahí!',
-        speech: "Cuenta regresiva sincronizada. Abre el mapa para trazar tu ruta. ¡Te esperamos puntual!",
-        duration: 6800
+        label: "04 // INSERT CHIP",
+        duration: 8200,
+        steps: [
+          {
+            at: 0,
+            speaker: "cortana",
+            sub: "Tenemos que hacerlo inolvidable, ¡no faltes! Me infiltraré en tu móvil.",
+            voice: "Tenemos que hacerlo inolvidable, ¡no faltes! Me infiltraré en tu móvil para que no se te olvide."
+          },
+          {
+            at: 4400,
+            speaker: "cortana",
+            sub: "Fin del informe. ¡Hasta luego, Spartans!",
+            voice: "Fin del informe. ¡Hasta luego, Spartans!"
+          }
+        ]
       }
     ];
 
     let currentScene = 0;
-    let sceneStartTime = performance.now();
-    let voiceEnabled = false;
+    let sceneStart = performance.now();
+    let triggeredSteps = new Set();
+    let audioEnabled = false;
     let isSpeaking = false;
-    let deployProgress = 0;
+    let currentSpeaker = "cortana";
+    let materialize = 0;
 
-    const sceneTagEl = document.getElementById("scene-tag");
-    const dialogueTextEl = document.getElementById("dialogue-text");
-    const progressFillEl = document.getElementById("progress-fill");
-    const sceneDots = document.querySelectorAll(".scene-dot");
-    const voiceToggleBtn = document.getElementById("voice-toggle");
-    const customAudioEl = document.getElementById("cortana-audio");
+    const subtitleBar = document.getElementById("subtitle-bar");
+    const sceneLabel = document.getElementById("scene-label");
+    const scenePills = document.querySelectorAll(".scene-pill");
+    const startOverlay = document.getElementById("start-overlay");
+    const startBtn = document.getElementById("start-btn");
+    const audioToggle = document.getElementById("audio-toggle");
+    const customVoiceEl = document.getElementById("custom-voice");
 
     // =========================================================
-    // 2. SISTEMA DE VOZ Y EFECTOS SONOROS HOLOGRÁFICOS
+    // 2. MOTOR DE VOZ (CORTANA + JEFE MAESTRO) Y MÚSICA HALO
     // =========================================================
     let audioCtx = null;
+    let bgmTimer = null;
+    let bgmStep = 0;
 
-    function playHoloChirp(freqStart = 520, freqEnd = 980) {
-      try {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (audioCtx.state === "suspended") audioCtx.resume();
-
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(freqStart, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(freqEnd, audioCtx.currentTime + 0.18);
-
-        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.22);
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.23);
-      } catch (e) {}
+    function ensureAudioCtx() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === "suspended") audioCtx.resume();
     }
 
-    function speakScene(index) {
-      if (!voiceEnabled) return;
+    // Pulso cinemático estilo Halo + riff épico en la escena 4
+    function startHaloMusic() {
+      if (bgmTimer) return;
+      ensureAudioCtx();
 
-      // Si existe un archivo cortana.mp3 en el repo, lo usa en la escena 0
-      if (customAudioEl && customAudioEl.readyState >= 2 && index === 0) {
-        customAudioEl.currentTime = 0;
-        customAudioEl.play().then(() => {
-          isSpeaking = true;
-          customAudioEl.onended = () => { isSpeaking = false; };
-        }).catch(() => synthesizeSpeech(scenes[index].speech));
-        return;
+      const notesBase = [110, 110, 130.81, 146.83, 110, 110, 164.81, 146.83];
+      const notesHero = [220, 261.63, 293.66, 329.63, 392.00, 329.63, 293.66, 261.63];
+
+      bgmTimer = setInterval(() => {
+        if (!audioEnabled || !audioCtx) return;
+        const now = audioCtx.currentTime;
+
+        // Bajo táctico continuo
+        const bass = audioCtx.createOscillator();
+        const bassGain = audioCtx.createGain();
+        bass.type = currentScene === 3 ? "sawtooth" : "triangle";
+        const freq = currentScene === 3
+          ? notesHero[bgmStep % notesHero.length]
+          : notesBase[bgmStep % notesBase.length];
+
+        bass.frequency.setValueAtTime(freq, now);
+        bassGain.gain.setValueAtTime(currentScene === 3 ? 0.032 : 0.024, now);
+        bassGain.gain.exponentialRampToValueAtTime(0.0008, now + 0.36);
+
+        bass.connect(bassGain);
+        bassGain.connect(audioCtx.destination);
+        bass.start(now);
+        bass.stop(now + 0.38);
+
+        bgmStep++;
+      }, 380);
+    }
+
+    function playSciFiBeep(type = "holo") {
+      if (!audioEnabled) return;
+      ensureAudioCtx();
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      if (type === "alert") {
+        osc.type = "square";
+        osc.frequency.setValueAtTime(880, now);
+        osc.frequency.setValueAtTime(1180, now + 0.09);
+        gain.gain.setValueAtTime(0.04, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      } else if (type === "chip") {
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(1320, now + 0.35);
+        gain.gain.setValueAtTime(0.06, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.38);
+      } else {
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(540, now);
+        osc.frequency.exponentialRampToValueAtTime(920, now + 0.16);
+        gain.gain.setValueAtTime(0.045, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
       }
 
-      synthesizeSpeech(scenes[index].speech);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.4);
     }
 
-    function synthesizeSpeech(text) {
-      if (!("speechSynthesis" in window)) return;
+    function speakLine(text, speaker) {
+      if (!audioEnabled || !("speechSynthesis" in window)) return;
       window.speechSynthesis.cancel();
 
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = "es-CO";
-      utter.rate = 1.02;
-      utter.pitch = 1.12;
 
       const voices = window.speechSynthesis.getVoices();
-      const preferredVoice = voices.find(v =>
-        /es/i.test(v.lang) && /(sabina|helena|paulina|monica|laura|google|female|mujer)/i.test(v.name)
-      ) || voices.find(v => /es/i.test(v.lang));
+      const esVoices = voices.filter(v => /es/i.test(v.lang));
 
-      if (preferredVoice) utter.voice = preferredVoice;
+      if (speaker === "chief") {
+        // Voz grave tipo Jefe Maestro
+        const maleVoice = esVoices.find(v => /(pablo|jorge|diego|raul|carlos|male|hombre)/i.test(v.name));
+        if (maleVoice) utter.voice = maleVoice;
+        utter.pitch = 0.62;
+        utter.rate = 0.92;
+      } else {
+        // Voz femenina IA Cortana
+        const femaleVoice = esVoices.find(v => /(sabina|helena|paulina|monica|laura|google|female|mujer)/i.test(v.name));
+        if (femaleVoice) utter.voice = femaleVoice;
+        utter.pitch = 1.14;
+        utter.rate = 1.04;
+      }
 
       utter.onstart = () => { isSpeaking = true; };
       utter.onend = () => { isSpeaking = false; };
@@ -726,375 +856,424 @@
       window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
     }
 
-    voiceToggleBtn.addEventListener("click", () => {
-      voiceEnabled = !voiceEnabled;
-      if (voiceEnabled) {
-        voiceToggleBtn.classList.add("active");
-        voiceToggleBtn.textContent = "🔊 Voz IA Activa";
-        playHoloChirp(440, 1040);
-        speakScene(currentScene);
+    function switchScene(idx) {
+      currentScene = idx;
+      sceneStart = performance.now();
+      triggeredSteps.clear();
+      if (idx === 0) materialize = 0;
+
+      sceneLabel.textContent = scenes[idx].label;
+      scenePills.forEach((p, i) => p.classList.toggle("active", i === idx));
+
+      if (idx === 2) playSciFiBeep("alert");
+      else if (idx === 3) playSciFiBeep("chip");
+      else playSciFiBeep("holo");
+    }
+
+    startBtn.addEventListener("click", () => {
+      startOverlay.classList.add("hidden");
+      audioEnabled = true;
+      audioToggle.textContent = "🔊 AUDIO ACTIVO";
+      ensureAudioCtx();
+      startHaloMusic();
+      switchScene(0);
+    });
+
+    audioToggle.addEventListener("click", () => {
+      audioEnabled = !audioEnabled;
+      if (audioEnabled) {
+        startOverlay.classList.add("hidden");
+        audioToggle.textContent = "🔊 AUDIO ACTIVO";
+        ensureAudioCtx();
+        startHaloMusic();
+        switchScene(currentScene);
       } else {
-        voiceToggleBtn.classList.remove("active");
-        voiceToggleBtn.textContent = "🔇 Voz Silenciada";
+        audioToggle.textContent = "🔇 SILENCIADO";
         isSpeaking = false;
         if ("speechSynthesis" in window) window.speechSynthesis.cancel();
-        if (customAudioEl) customAudioEl.pause();
       }
     });
 
-    function setScene(index, manual = false) {
-      currentScene = index;
-      sceneStartTime = performance.now();
-      if (index === 0) deployProgress = 0;
-
-      const sc = scenes[index];
-      sceneTagEl.textContent = sc.tag;
-      dialogueTextEl.innerHTML = sc.html;
-
-      sceneDots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-
-      if (voiceEnabled || manual) {
-        playHoloChirp(index % 2 === 0 ? 540 : 680, 1120);
-      }
-      if (voiceEnabled) {
-        speakScene(index);
-      }
-    }
-
-    sceneDots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = Number(dot.dataset.scene);
-        setScene(idx, true);
+    scenePills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        switchScene(Number(pill.dataset.idx));
       });
     });
 
     // =========================================================
-    // 3. RENDERIZADO HOLOGRÁFICO EN CANVAS (4 ESCENAS VISUALES)
+    // 3. ANIMACIÓN HOLOGRÁFICA DE 4 ESCENAS EN CANVAS
     // =========================================================
     const canvas = document.getElementById("holo-canvas");
     const ctx = canvas.getContext("2d");
 
-    function resizeHoloCanvas() {
+    function resizeCanvas() {
       const rect = canvas.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
-    resizeHoloCanvas();
-    window.addEventListener("resize", resizeHoloCanvas);
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
-    // Partículas ascendentes del proyector
-    const particles = Array.from({ length: 34 }, () => ({
-      x: Math.random(),
-      y: Math.random(),
-      r: Math.random() * 1.8 + 0.6,
-      speed: Math.random() * 0.004 + 0.0015,
-      violet: Math.random() > 0.45
-    }));
-
-    function drawCortanaSilhouette(cx, baseY, t, glitchX) {
+    function drawCortana(x, y, scale, t, glitchX = 0) {
       ctx.save();
-      ctx.translate(cx + glitchX, baseY);
+      ctx.translate(x + glitchX, y);
+      ctx.scale(scale, scale);
 
-      const breathe = Math.sin(t * 2.4) * 2.2;
-      const bodyGrad = ctx.createLinearGradient(0, -175, 0, -15);
-      bodyGrad.addColorStop(0, "rgba(192, 132, 252, 0.92)");
-      bodyGrad.addColorStop(0.45, "rgba(56, 189, 248, 0.85)");
-      bodyGrad.addColorStop(1, "rgba(126, 34, 206, 0.18)");
+      const floatY = Math.sin(t * 2.5) * 2.5;
+      ctx.translate(0, floatY);
 
-      ctx.strokeStyle = "rgba(125, 211, 252, 0.95)";
-      ctx.fillStyle = bodyGrad;
-      ctx.lineWidth = 1.6;
-      ctx.shadowColor = "rgba(168, 85, 247, 0.85)";
-      ctx.shadowBlur = 16;
+      // Aura holográfica azul cian (fiel al tono azul del video)
+      ctx.shadowColor = "#38bdf8";
+      ctx.shadowBlur = 18;
 
-      // Torso / Hombros estilizados
+      const grad = ctx.createLinearGradient(0, -165, 0, 0);
+      grad.addColorStop(0, "rgba(186, 230, 253, 0.95)");
+      grad.addColorStop(0.5, "rgba(56, 189, 248, 0.85)");
+      grad.addColorStop(1, "rgba(2, 132, 199, 0.15)");
+
+      // Silueta estilizada Cortana Halo Reach
+      ctx.fillStyle = grad;
+      ctx.strokeStyle = "#e0f2fe";
+      ctx.lineWidth = 1.5;
+
+      // Torso y brazos
       ctx.beginPath();
-      ctx.moveTo(-44, -18);
-      ctx.quadraticCurveTo(-42, -62, -24, -74);
-      ctx.lineTo(-10, -82);
-      ctx.lineTo(-8, -94);
-      ctx.lineTo(8, -94);
-      ctx.lineTo(10, -82);
-      ctx.lineTo(24, -74);
-      ctx.quadraticCurveTo(42, -62, 44, -18);
+      ctx.moveTo(-36, -10);
+      ctx.quadraticCurveTo(-35, -58, -20, -72);
+      ctx.lineTo(-8, -80);
+      ctx.lineTo(-7, -92);
+      ctx.lineTo(7, -92);
+      ctx.lineTo(8, -80);
+      ctx.lineTo(20, -72);
+      ctx.quadraticCurveTo(35, -58, 36, -10);
       ctx.closePath();
       ctx.fill();
       ctx.stroke();
 
-      // Líneas de circuitos internos en el torso (estilo Halo Reach)
-      ctx.strokeStyle = "rgba(224, 242, 254, 0.55)";
-      ctx.lineWidth = 1;
+      // Líneas luminosas del traje de datos
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.7)";
+      ctx.lineWidth = 1.1;
       ctx.beginPath();
-      ctx.moveTo(-18, -70);
-      ctx.lineTo(-10, -52);
-      ctx.lineTo(-14, -28);
-      ctx.moveTo(18, -70);
-      ctx.lineTo(10, -52);
-      ctx.lineTo(14, -28);
-      ctx.moveTo(0, -78);
-      ctx.lineTo(0, -32);
+      ctx.moveTo(-15, -68);
+      ctx.lineTo(-9, -46);
+      ctx.lineTo(-13, -20);
+      ctx.moveTo(15, -68);
+      ctx.lineTo(9, -46);
+      ctx.lineTo(13, -20);
+      ctx.moveTo(-12, -52);
+      ctx.lineTo(12, -52);
       ctx.stroke();
 
-      // Cabeza y corte de cabello holográfico característico de Cortana
-      ctx.save();
-      ctx.translate(0, breathe * 0.6);
+      // Cabello corto característico
+      ctx.fillStyle = "rgba(14, 165, 233, 0.85)";
+      ctx.beginPath();
+      ctx.moveTo(-21, -102);
+      ctx.quadraticCurveTo(-25, -135, 0, -139);
+      ctx.quadraticCurveTo(25, -135, 21, -102);
+      ctx.lineTo(15, -96);
+      ctx.lineTo(13, -115);
+      ctx.lineTo(-13, -115);
+      ctx.lineTo(-15, -96);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
 
-      // Cabello / casco de datos
-      ctx.fillStyle = "rgba(168, 85, 247, 0.72)";
-      ctx.strokeStyle = "rgba(192, 132, 252, 0.95)";
+      // Rostro
+      ctx.fillStyle = "rgba(125, 211, 252, 0.55)";
+      ctx.beginPath();
+      ctx.ellipse(0, -112, 12.5, 16, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      // Ojos brillantes
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath();
+      ctx.ellipse(-4.8, -113, 2.2, 1.2, 0, 0, Math.PI * 2);
+      ctx.ellipse(4.8, -113, 2.2, 1.2, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Modulación de voz
+      const mouthH = (isSpeaking && currentSpeaker === "cortana")
+        ? Math.abs(Math.sin(t * 20)) * 2.2 + 0.8
+        : 0.7;
+      ctx.beginPath();
+      ctx.ellipse(0, -102, 3.2, mouthH * 0.5, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    function drawScene01_Deployment(w, h, t) {
+      // Fondo cielo orbital + Anillo de Halo gigante (igual a la primera toma del video)
+      const sky = ctx.createLinearGradient(0, 0, 0, h);
+      sky.addColorStop(0, "#0b192c");
+      sky.addColorStop(1, "#030711");
+      ctx.fillStyle = sky;
+      ctx.fillRect(0, 0, w, h);
+
+      // Gran anillo de Halo cruzando el cielo
+      ctx.save();
+      ctx.strokeStyle = "rgba(186, 230, 253, 0.22)";
+      ctx.lineWidth = 18;
+      ctx.beginPath();
+      ctx.arc(w * 0.18, h * 0.65, 195, -1.35, -0.15);
+      ctx.stroke();
+      ctx.restore();
+
+      // Silueta del casco Spartan a la derecha + haz holográfico en su mano
+      ctx.save();
+      ctx.fillStyle = "rgba(30, 48, 38, 0.78)";
+      ctx.strokeStyle = "rgba(74, 222, 128, 0.35)";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.moveTo(-22, -104);
-      ctx.quadraticCurveTo(-27, -138, 0, -142);
-      ctx.quadraticCurveTo(27, -138, 22, -104);
-      ctx.lineTo(16, -98);
-      ctx.lineTo(14, -118);
-      ctx.lineTo(-14, -118);
-      ctx.lineTo(-16, -98);
+      ctx.arc(w * 0.74, h * 0.42, 46, Math.PI * 0.85, Math.PI * 2.15);
+      ctx.lineTo(w * 0.88, h);
+      ctx.lineTo(w * 0.58, h);
       ctx.closePath();
       ctx.fill();
       ctx.stroke();
 
-      // Rostro holográfico
-      ctx.fillStyle = "rgba(56, 189, 248, 0.45)";
+      // Visor dorado del Spartan
+      ctx.fillStyle = "rgba(245, 158, 11, 0.65)";
       ctx.beginPath();
-      ctx.ellipse(0, -114, 13.5, 17, 0, 0, Math.PI * 2);
+      ctx.ellipse(w * 0.71, h * 0.41, 24, 11, -0.12, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      // Base emisora y Cortana materializándose a la izquierda
+      const cx = w * 0.34;
+      const baseY = h - 72;
+
+      const beam = ctx.createLinearGradient(cx, baseY, cx, 24);
+      beam.addColorStop(0, "rgba(56, 189, 248, 0.45)");
+      beam.addColorStop(1, "rgba(56, 189, 248, 0)");
+      ctx.fillStyle = beam;
+      ctx.beginPath();
+      ctx.moveTo(cx - 28, baseY);
+      ctx.lineTo(cx - 65, 24);
+      ctx.lineTo(cx + 65, 24);
+      ctx.lineTo(cx + 28, baseY);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.save();
+      const revealH = materialize * 170;
+      ctx.beginPath();
+      ctx.rect(0, baseY - revealH, w, revealH + 10);
+      ctx.clip();
+      const glitch = Math.random() > 0.95 ? (Math.random() - 0.5) * 6 : 0;
+      drawCortana(cx, baseY, 0.95, t, glitch);
+      ctx.restore();
+    }
+
+    function drawScene02_TacticalHorizon(w, h, t) {
+      // Escaneo topográfico rojo/naranja + cielo azul (inspirado en 0:13 - 0:20 del video)
+      const bg = ctx.createLinearGradient(0, 0, 0, h);
+      bg.addColorStop(0, "#0c2442");
+      bg.addColorStop(0.55, "#1e3a5f");
+      bg.addColorStop(1, "#2a0e08");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+
+      // Malla topográfica naranja/roja holográfica a la izquierda
+      ctx.save();
+      ctx.strokeStyle = "rgba(249, 115, 22, 0.55)";
+      ctx.fillStyle = "rgba(234, 88, 12, 0.18)";
+      ctx.lineWidth = 1.2;
+      for (let row = 0; row < 5; row++) {
+        ctx.beginPath();
+        const yBase = h * 0.46 + row * 14;
+        ctx.moveTo(0, yBase);
+        for (let x = 0; x <= w * 0.65; x += 22) {
+          const wave = Math.sin(x * 0.03 + t * 2 + row) * 8;
+          ctx.lineTo(x, yBase + wave);
+        }
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Tarjeta HUD de Fecha y Hora (1900 HRS)
+      ctx.save();
+      const boxX = 16;
+      const boxY = 26;
+      ctx.fillStyle = "rgba(4, 12, 26, 0.82)";
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.roundRect(boxX, boxY, 185, 68, 8);
       ctx.fill();
       ctx.stroke();
 
-      // Ojos luminosos de IA
+      ctx.fillStyle = "#f97316";
+      ctx.font = "700 10px Orbitron, sans-serif";
+      ctx.fillText("OBJETIVO TEMPORAL", boxX + 12, boxY + 20);
+
       ctx.fillStyle = "#ffffff";
-      ctx.shadowColor = "#38bdf8";
-      ctx.shadowBlur = 10;
-      ctx.beginPath();
-      ctx.ellipse(-5.2, -115, 2.4, 1.3, -0.1, 0, Math.PI * 2);
-      ctx.ellipse(5.2, -115, 2.4, 1.3, 0.1, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.font = "900 15px Orbitron, sans-serif";
+      ctx.fillText("SÁB 21 NOV // 1900H", boxX + 12, boxY + 42);
 
-      // Pulso de voz en labios / núcleo
-      const mouthPulse = isSpeaking ? Math.abs(Math.sin(t * 18)) * 2.4 + 0.8 : 0.8;
-      ctx.fillStyle = "rgba(224, 242, 254, 0.9)";
-      ctx.beginPath();
-      ctx.ellipse(0, -104, 3.5, mouthPulse * 0.55, 0, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillStyle = "#7dd3fc";
+      ctx.font = "600 11px Rajdhani, sans-serif";
+      ctx.fillText("7:00 PM • HORA OFICIAL COLOMBIA", boxX + 12, boxY + 58);
+      ctx.restore();
 
-      ctx.restore();
-      ctx.restore();
+      // Cortana supervisando desde la derecha
+      drawCortana(w * 0.72, h - 62, 1.08, t);
     }
 
-    function drawSceneVisuals(w, h, cx, baseY, t) {
-      // Elementos gráficos propios de cada una de las 4 escenas
-      if (currentScene === 0) {
-        // ESCENA 1: Anillos orbitales de despliegue + Onda de voz
-        for (let i = 0; i < 3; i++) {
-          ctx.save();
-          ctx.translate(cx, baseY - 92);
-          ctx.rotate(t * (0.5 + i * 0.25) * (i % 2 === 0 ? 1 : -1));
-          ctx.strokeStyle = i === 1 ? "rgba(192, 132, 252, 0.45)" : "rgba(56, 189, 248, 0.38)";
-          ctx.lineWidth = 1.4;
-          ctx.setLineDash([18, 12]);
-          ctx.beginPath();
-          ctx.arc(0, 0, 62 + i * 16, 0, Math.PI * 2);
-          ctx.stroke();
-          ctx.restore();
-        }
-      } else if (currentScene === 1) {
-        // ESCENA 2: Cronómetro orbital y tarjeta de fecha flotante
-        const cardX = cx + 76;
-        const cardY = baseY - 125 + Math.sin(t * 2.5) * 4;
+    function drawScene03_SatelliteMap(w, h, t) {
+      // Mapa satelital topográfico estilo Halo (0:27 - 0:32 del video)
+      ctx.fillStyle = "#06131c";
+      ctx.fillRect(0, 0, w, h);
 
-        ctx.save();
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.65)";
-        ctx.fillStyle = "rgba(8, 20, 44, 0.72)";
-        ctx.lineWidth = 1.2;
+      // Curvas de nivel topográficas y carreteras
+      ctx.save();
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.22)";
+      ctx.lineWidth = 1;
+      for (let i = 1; i <= 7; i++) {
         ctx.beginPath();
-        ctx.roundRect(cardX - 54, cardY - 28, 108, 56, 10);
-        ctx.fill();
+        ctx.ellipse(w * 0.52, h * 0.44, i * 36, i * 21, -0.25, 0, Math.PI * 2);
         ctx.stroke();
-
-        // Línea conectora hacia la IA
-        ctx.beginPath();
-        ctx.moveTo(cx + 28, baseY - 105);
-        ctx.lineTo(cardX - 54, cardY);
-        ctx.stroke();
-
-        ctx.fillStyle = "#c084fc";
-        ctx.font = "700 10px Orbitron, sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText("SÁB 21 NOV", cardX, cardY - 6);
-
-        ctx.fillStyle = "#38bdf8";
-        ctx.font = "900 14px Orbitron, sans-serif";
-        ctx.fillText("19:00 HRS", cardX, cardY + 14);
-        ctx.restore();
-      } else if (currentScene === 2) {
-        // ESCENA 3: Radar táctico de geolocalización (CDA Villa)
-        const rx = cx - 82;
-        const ry = baseY - 115;
-        ctx.save();
-        ctx.translate(rx, ry);
-
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.5)";
-        ctx.fillStyle = "rgba(6, 18, 38, 0.7)";
-        ctx.lineWidth = 1.2;
-        ctx.beginPath();
-        ctx.arc(0, 0, 34, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(0, 0, 18, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // Barrido del radar
-        ctx.rotate(t * 2.8);
-        const sweep = ctx.createLinearGradient(0, 0, 34, 0);
-        sweep.addColorStop(0, "rgba(168, 85, 247, 0.5)");
-        sweep.addColorStop(1, "rgba(56, 189, 248, 0)");
-        ctx.fillStyle = sweep;
-        ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.arc(0, 0, 33, -0.4, 0.4);
-        ctx.closePath();
-        ctx.fill();
-
-        // Punto parpadeante del lugar
-        ctx.rotate(-t * 2.8);
-        ctx.fillStyle = Math.sin(t * 8) > 0 ? "#f472b6" : "#38bdf8";
-        ctx.beginPath();
-        ctx.arc(10, -8, 3.5, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-
-        // Etiqueta KM 7
-        ctx.save();
-        ctx.fillStyle = "#7dd3fc";
-        ctx.font = "700 9px Orbitron, sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText("KM 7 • CDA VILLA", rx, ry + 48);
-        ctx.restore();
-      } else if (currentScene === 3) {
-        // ESCENA 4: Ondas de frecuencia de voz / sincronización activa
-        ctx.save();
-        const bars = 18;
-        for (let i = 0; i < bars; i++) {
-          const offset = (i - bars / 2) * 11;
-          const amp = isSpeaking
-            ? (Math.sin(t * 14 + i) * 0.5 + 0.5) * 24 + 4
-            : (Math.sin(t * 3 + i * 0.7) * 0.5 + 0.5) * 8 + 3;
-          ctx.fillStyle = i % 2 === 0 ? "rgba(56, 189, 248, 0.65)" : "rgba(192, 132, 252, 0.65)";
-          ctx.fillRect(cx + offset - 2, baseY - 165 - amp / 2, 4, amp);
-        }
-        ctx.restore();
       }
+
+      // Trazo de la Variante La Romelia - El Pollo
+      ctx.strokeStyle = "rgba(250, 204, 21, 0.75)";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.65);
+      ctx.quadraticCurveTo(w * 0.45, h * 0.48, w, h * 0.25);
+      ctx.stroke();
+
+      // Encabezado "UBICACIONES DESCUBIERTAS"
+      ctx.fillStyle = "rgba(186, 230, 253, 0.85)";
+      ctx.font = "700 10px Orbitron, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("UBICACIONES DESCUBIERTAS // SECTOR PEREIRA - DOSQUEBRADAS", w / 2, 22);
+
+      // Marcador táctico pulsante en CDA Villa
+      const pinX = w * 0.52;
+      const pinY = h * 0.44;
+      const pulseR = 12 + Math.sin(t * 6) * 5;
+
+      ctx.strokeStyle = "#f97316";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(pinX, pinY, pulseR, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.fillStyle = "#f97316";
+      ctx.beginPath();
+      ctx.arc(pinX, pinY, 5, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Etiqueta del punto
+      ctx.fillStyle = "rgba(3, 10, 22, 0.88)";
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.roundRect(pinX - 115, pinY + 14, 230, 34, 6);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "700 10px Orbitron, sans-serif";
+      ctx.fillText("KM 7 VÍA LA ROMELIA - EL POLLO", pinX, pinY + 29);
+      ctx.fillStyle = "#7dd3fc";
+      ctx.font = "600 10px Rajdhani, sans-serif";
+      ctx.fillText("AL FRENTE DEL CDA VILLA", pinX, pinY + 42);
+      ctx.restore();
     }
 
-    function renderHoloFrame(now) {
+    function drawScene04_InsertChip(w, h, t) {
+      // Escena final con Cortana + destello azul de "INSERT CHIP" (0:34 - 0:45 del video)
+      const bg = ctx.createRadialGradient(w * 0.5, h * 0.45, 10, w * 0.5, h * 0.45, w * 0.7);
+      bg.addColorStop(0, "#0c2d48");
+      bg.addColorStop(1, "#02050c");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+
+      // Cortana a la izquierda despidiéndose
+      drawCortana(w * 0.3, h - 62, 1.0, t);
+
+      // Chip de IA + Destello óptico azul intenso a la derecha
+      const chipX = w * 0.68;
+      const chipY = h * 0.42;
+
+      // Destello horizontal tipo lens flare del video
+      const flare = ctx.createLinearGradient(chipX - 95, chipY, chipX + 95, chipY);
+      flare.addColorStop(0, "rgba(56, 189, 248, 0)");
+      flare.addColorStop(0.5, "rgba(186, 230, 253, 0.95)");
+      flare.addColorStop(1, "rgba(56, 189, 248, 0)");
+      ctx.fillStyle = flare;
+      ctx.fillRect(chipX - 95, chipY - 3, 190, 6);
+
+      // Núcleo luminoso
+      const glow = ctx.createRadialGradient(chipX, chipY, 2, chipX, chipY, 42);
+      glow.addColorStop(0, "rgba(255, 255, 255, 0.95)");
+      glow.addColorStop(0.4, "rgba(56, 189, 248, 0.75)");
+      glow.addColorStop(1, "rgba(56, 189, 248, 0)");
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(chipX, chipY, 42, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Texto HUD "• INSERT CHIP" igual al video
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "700 11px Orbitron, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("• INSERT CHIP", chipX, chipY + 48);
+    }
+
+    function animate(now) {
       const w = canvas.getBoundingClientRect().width;
       const h = canvas.getBoundingClientRect().height;
       const t = now * 0.001;
 
-      // Progreso automático de las 4 escenas
-      const elapsed = now - sceneStartTime;
-      const currentDuration = scenes[currentScene].duration;
-      const pct = Math.min((elapsed / currentDuration) * 100, 100);
-      progressFillEl.style.width = pct + "%";
+      const scene = scenes[currentScene];
+      const elapsed = now - sceneStart;
 
-      if (elapsed >= currentDuration) {
-        setScene((currentScene + 1) % scenes.length, false);
+      // Disparar subtítulos y voces sincronizadas dentro de cada escena
+      scene.steps.forEach((step, idx) => {
+        if (elapsed >= step.at && !triggeredSteps.has(idx)) {
+          triggeredSteps.add(idx);
+          currentSpeaker = step.speaker;
+          subtitleBar.textContent = step.sub;
+          subtitleBar.classList.toggle("chief-line", step.speaker === "chief");
+          speakLine(step.voice, step.speaker);
+        }
+      });
+
+      if (elapsed >= scene.duration) {
+        switchScene((currentScene + 1) % scenes.length);
       }
 
-      if (deployProgress < 1) {
-        deployProgress = Math.min(deployProgress + 0.025, 1);
+      if (materialize < 1) {
+        materialize = Math.min(materialize + 0.022, 1);
       }
 
       ctx.clearRect(0, 0, w, h);
 
-      const cx = w / 2;
-      const baseY = h - 18;
+      if (currentScene === 0) drawScene01_Deployment(w, h, t);
+      else if (currentScene === 1) drawScene02_TacticalHorizon(w, h, t);
+      else if (currentScene === 2) drawScene03_SatelliteMap(w, h, t);
+      else drawScene04_InsertChip(w, h, t);
 
-      // 1. Base del proyector UNSC
-      const baseGrad = ctx.createLinearGradient(cx - 75, baseY, cx + 75, baseY);
-      baseGrad.addColorStop(0, "rgba(56, 189, 248, 0.1)");
-      baseGrad.addColorStop(0.5, "rgba(56, 189, 248, 0.85)");
-      baseGrad.addColorStop(1, "rgba(56, 189, 248, 0.1)");
+      // Líneas de escaneo holográfico sutiles
+      ctx.fillStyle = "rgba(56, 189, 248, 0.03)";
+      for (let y = 0; y < h; y += 4) {
+        ctx.fillRect(0, y, w, 1);
+      }
 
-      ctx.fillStyle = baseGrad;
-      ctx.beginPath();
-      ctx.ellipse(cx, baseY, 72, 9, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Haz de luz cónico ascendente
-      const beamGrad = ctx.createLinearGradient(cx, baseY, cx, 22);
-      beamGrad.addColorStop(0, "rgba(56, 189, 248, 0.28)");
-      beamGrad.addColorStop(0.6, "rgba(168, 85, 247, 0.12)");
-      beamGrad.addColorStop(1, "rgba(56, 189, 248, 0)");
-
-      ctx.fillStyle = beamGrad;
-      ctx.beginPath();
-      ctx.moveTo(cx - 56, baseY);
-      ctx.lineTo(cx - 115, 20);
-      ctx.lineTo(cx + 115, 20);
-      ctx.lineTo(cx + 56, baseY);
-      ctx.closePath();
-      ctx.fill();
-
-      // 2. Partículas holográficas flotantes
-      particles.forEach((p) => {
-        p.y -= p.speed;
-        if (p.y < 0.08) p.y = 0.95;
-        const px = cx + (p.x - 0.5) * 180;
-        const py = p.y * (baseY - 12);
-        ctx.fillStyle = p.violet ? "rgba(192, 132, 252, 0.65)" : "rgba(56, 189, 248, 0.7)";
-        ctx.beginPath();
-        ctx.arc(px, py, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      // 3. Recorte progresivo de despliegue + micro-glitch aleatorio
-      const glitchX = Math.random() > 0.965 ? (Math.random() - 0.5) * 7 : 0;
-
-      ctx.save();
-      const revealTop = baseY - deployProgress * 185;
-      ctx.beginPath();
-      ctx.rect(0, revealTop, w, baseY - revealTop);
-      ctx.clip();
-
-      drawSceneVisuals(w, h, cx, baseY, t);
-      drawCortanaSilhouette(cx, baseY, t, glitchX);
-
-      // Línea láser de escaneo vertical
-      const scanY = baseY - ((t * 75) % 175);
-      ctx.strokeStyle = "rgba(125, 211, 252, 0.45)";
-      ctx.lineWidth = 1.2;
-      ctx.beginPath();
-      ctx.moveTo(cx - 65, scanY);
-      ctx.lineTo(cx + 65, scanY);
-      ctx.stroke();
-
-      ctx.restore();
-
-      // Texto técnico en esquinas del HUD
-      ctx.fillStyle = "rgba(125, 211, 252, 0.55)";
-      ctx.font = "600 9px Orbitron, sans-serif";
-      ctx.textAlign = "left";
-      ctx.fillText("UNSC // HOLO-LINK", 12, 18);
-      ctx.textAlign = "right";
-      ctx.fillText(`0${currentScene + 1} / 04`, w - 12, 18);
-
-      requestAnimationFrame(renderHoloFrame);
+      requestAnimationFrame(animate);
     }
-    requestAnimationFrame(renderHoloFrame);
+    requestAnimationFrame(animate);
 
     // =========================================================
-    // 4. CUENTA REGRESIVA EXACTA (SÁBADO 21 NOV 2026 - 7:00 PM)
+    // 4. CUENTA REGRESIVA AL SÁBADO 21 NOV 2026 - 7:00 PM (COL)
     // =========================================================
     const targetDate = new Date("2026-11-21T19:00:00-05:00").getTime();
-
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
     const minutesEl = document.getElementById("minutes");
@@ -1103,98 +1282,73 @@
     const titleEl = document.getElementById("countdown-title");
     const bannerEl = document.getElementById("live-banner");
 
-    let celebrationStarted = false;
+    let confettiLaunched = false;
 
-    function pad(num) {
-      return String(num).padStart(2, "0");
+    function pad(n) {
+      return String(n).padStart(2, "0");
     }
 
-    function updateCountdown() {
-      const now = Date.now();
-      const diff = targetDate - now;
-
+    function tickCountdown() {
+      const diff = targetDate - Date.now();
       if (diff <= 0) {
         gridEl.style.display = "none";
         titleEl.style.display = "none";
         bannerEl.style.display = "block";
-        if (!celebrationStarted) {
-          celebrationStarted = true;
-          launchConfetti();
+        if (!confettiLaunched) {
+          confettiLaunched = true;
+          startConfetti();
         }
         return;
       }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      daysEl.textContent = pad(days);
-      hoursEl.textContent = pad(hours);
-      minutesEl.textContent = pad(minutes);
-      secondsEl.textContent = pad(seconds);
+      daysEl.textContent = pad(Math.floor(diff / 86400000));
+      hoursEl.textContent = pad(Math.floor((diff / 3600000) % 24));
+      minutesEl.textContent = pad(Math.floor((diff / 60000) % 60));
+      secondsEl.textContent = pad(Math.floor((diff / 1000) % 60));
     }
+    tickCountdown();
+    setInterval(tickCountdown, 1000);
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // Copiar dirección al portapapeles
+    // Copiar dirección
     const copyBtn = document.getElementById("copy-btn");
-    const addressText = "Km 7 vía La Romelia - El Pollo, al frente del CDA Villa";
-
+    const address = "Km 7 vía La Romelia - El Pollo, al frente del CDA Villa";
     copyBtn.addEventListener("click", async () => {
       try {
-        await navigator.clipboard.writeText(addressText);
-        const original = copyBtn.innerHTML;
-        copyBtn.innerHTML = "✅ ¡Copiado!";
-        setTimeout(() => { copyBtn.innerHTML = original; }, 2200);
+        await navigator.clipboard.writeText(address);
+        const prev = copyBtn.textContent;
+        copyBtn.textContent = "✅ ¡COPIADO!";
+        setTimeout(() => { copyBtn.textContent = prev; }, 2200);
       } catch (e) {
-        prompt("Copia la dirección:", addressText);
+        prompt("Copia las coordenadas:", address);
       }
     });
 
-    // Confeti holográfico cuando llega la hora
-    function launchConfetti() {
-      const cCanvas = document.getElementById("confetti-canvas");
-      const cCtx = cCanvas.getContext("2d");
-      cCanvas.width = window.innerWidth;
-      cCanvas.height = window.innerHeight;
-
-      const colors = ["#38bdf8", "#a855f7", "#c084fc", "#7dd3fc", "#ffffff"];
-      const pieces = Array.from({ length: 110 }, () => ({
-        x: Math.random() * cCanvas.width,
-        y: Math.random() * cCanvas.height - cCanvas.height,
-        w: Math.random() * 9 + 5,
+    function startConfetti() {
+      const c = document.getElementById("confetti-canvas");
+      const cx = c.getContext("2d");
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+      const colors = ["#38bdf8", "#bae6fd", "#f97316", "#4ade80", "#ffffff"];
+      const items = Array.from({ length: 100 }, () => ({
+        x: Math.random() * c.width,
+        y: Math.random() * c.height - c.height,
+        w: Math.random() * 8 + 4,
         h: Math.random() * 5 + 3,
         color: colors[Math.floor(Math.random() * colors.length)],
-        speedY: Math.random() * 3 + 2,
-        speedX: (Math.random() - 0.5) * 2,
-        angle: Math.random() * 360,
-        spin: (Math.random() - 0.5) * 8
+        vy: Math.random() * 3 + 2,
+        vx: (Math.random() - 0.5) * 2
       }));
-
-      function draw() {
-        cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
-        pieces.forEach((p) => {
-          cCtx.save();
-          cCtx.translate(p.x, p.y);
-          cCtx.rotate((p.angle * Math.PI) / 180);
-          cCtx.fillStyle = p.color;
-          cCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-          cCtx.restore();
-
-          p.y += p.speedY;
-          p.x += p.speedX;
-          p.angle += p.spin;
-
-          if (p.y > cCanvas.height) {
-            p.y = -10;
-            p.x = Math.random() * cCanvas.width;
-          }
+      function loop() {
+        cx.clearRect(0, 0, c.width, c.height);
+        items.forEach(p => {
+          cx.fillStyle = p.color;
+          cx.fillRect(p.x, p.y, p.w, p.h);
+          p.y += p.vy;
+          p.x += p.vx;
+          if (p.y > c.height) p.y = -10;
         });
-        requestAnimationFrame(draw);
+        requestAnimationFrame(loop);
       }
-      draw();
+      loop();
     }
   </script>
 </body>
