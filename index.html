@@ -78,8 +78,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 12px;
+      flex-wrap: wrap;
     }
 
     .unsc-tag {
@@ -87,13 +88,13 @@
       align-items: center;
       gap: 7px;
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.63rem;
+      font-size: 0.61rem;
       font-weight: 700;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.3px;
       color: var(--halo-ice);
       background: rgba(56, 189, 248, 0.12);
       border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 5px 11px;
+      padding: 5px 10px;
       border-radius: 999px;
     }
 
@@ -111,22 +112,34 @@
       50% { opacity: 0.25; }
     }
 
-    .replay-btn {
+    .hud-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hud-btn {
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.62rem;
+      font-size: 0.58rem;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
       color: #ffffff;
       background: linear-gradient(135deg, #0284c7, #1d4ed8);
       border: 1px solid rgba(186, 230, 253, 0.5);
-      padding: 5px 11px;
+      padding: 5px 9px;
       border-radius: 999px;
       cursor: pointer;
-      transition: box-shadow 0.15s ease;
+      transition: box-shadow 0.15s ease, opacity 0.15s ease;
     }
 
-    .replay-btn:hover {
+    .hud-btn:hover {
       box-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
+    }
+
+    .hud-btn.muted {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--text-dim);
+      border-color: rgba(56, 189, 248, 0.25);
     }
 
     /* Contenedor Adaptable del Video */
@@ -150,7 +163,7 @@
       background: #000000;
     }
 
-    /* Pantalla inicial para reproducir con audio sin bloqueo del navegador */
+    /* Pantalla inicial para activar video + banda sonora con sonido */
     .start-overlay {
       position: absolute;
       inset: 0;
@@ -411,13 +424,19 @@
 
   <canvas id="confetti-canvas"></canvas>
 
+  <!-- Banda sonora Halo Combat Evolved -->
+  <audio id="bg-music" src="Halo Combat Evolved - Halo (Main Theme Song).mp3" loop preload="auto"></audio>
+
   <main class="card">
     <div class="hud-header">
       <div class="unsc-tag">
         <span class="rec-dot"></span>
         IA CTN-0452 // INFORME
       </div>
-      <button type="button" class="replay-btn" id="replay-btn">↺ REPETIR VIDEO</button>
+      <div class="hud-controls">
+        <button type="button" class="hud-btn muted" id="music-toggle">🔇 TEMA HALO</button>
+        <button type="button" class="hud-btn" id="replay-btn">↺ REPETIR</button>
+      </div>
     </div>
 
     <!-- Reproductor del Video Generado -->
@@ -430,7 +449,7 @@
         controls
       ></video>
 
-      <!-- Pantalla de inicio para activar reproducción con sonido -->
+      <!-- Pantalla de inicio para activar video + música con sonido -->
       <div class="start-overlay" id="start-overlay">
         <div class="chip-ring">
           <svg width="26" height="26" fill="none" stroke="#7dd3fc" stroke-width="2.2" viewBox="0 0 24 24">
@@ -438,7 +457,7 @@
           </svg>
         </div>
         <button type="button" class="start-btn" id="start-btn">▶ INICIAR INFORME</button>
-        <p class="start-hint">Toca para reproducir el video con sonido</p>
+        <p class="start-hint">Toca para activar el video y la banda sonora</p>
       </div>
     </div>
 
@@ -545,26 +564,88 @@
 
   <script>
     const videoEl = document.getElementById("promo-video");
+    const bgMusicEl = document.getElementById("bg-music");
     const startOverlay = document.getElementById("start-overlay");
     const startBtn = document.getElementById("start-btn");
     const replayBtn = document.getElementById("replay-btn");
+    const musicToggleBtn = document.getElementById("music-toggle");
 
-    function playReportVideo() {
+    let musicEnabled = false;
+    let fadeTimer = null;
+
+    function smoothVolume(targetVol) {
+      if (fadeTimer) clearInterval(fadeTimer);
+      fadeTimer = setInterval(() => {
+        const diff = targetVol - bgMusicEl.volume;
+        if (Math.abs(diff) <= 0.04) {
+          bgMusicEl.volume = targetVol;
+          clearInterval(fadeTimer);
+        } else {
+          bgMusicEl.volume = Math.max(0, Math.min(1, bgMusicEl.volume + Math.sign(diff) * 0.04));
+        }
+      }, 60);
+    }
+
+    function enableMusic(initialVol) {
+      musicEnabled = true;
+      bgMusicEl.volume = initialVol;
+      bgMusicEl.play().then(() => {
+        musicToggleBtn.textContent = "🎵 TEMA HALO";
+        musicToggleBtn.classList.remove("muted");
+      }).catch(() => {});
+    }
+
+    function startFullExperience() {
       startOverlay.classList.add("hidden");
+
+      // 1. Reproduce el video con su audio activo
       videoEl.muted = false;
       videoEl.play().catch(() => {
         videoEl.muted = true;
         videoEl.play();
       });
+
+      // 2. Reproduce el tema de Halo suavemente de fondo mientras habla el video
+      enableMusic(0.28);
     }
 
-    startBtn.addEventListener("click", playReportVideo);
+    startBtn.addEventListener("click", startFullExperience);
 
     replayBtn.addEventListener("click", () => {
       startOverlay.classList.add("hidden");
       videoEl.currentTime = 0;
       videoEl.muted = false;
       videoEl.play();
+      if (musicEnabled) {
+        smoothVolume(0.28);
+        if (bgMusicEl.paused) bgMusicEl.play();
+      }
+    });
+
+    // Atenúa la música cuando el video habla y la sube cuando el video termina o se pausa
+    videoEl.addEventListener("play", () => {
+      if (musicEnabled) smoothVolume(0.28);
+    });
+
+    videoEl.addEventListener("pause", () => {
+      if (musicEnabled) smoothVolume(0.85);
+    });
+
+    videoEl.addEventListener("ended", () => {
+      if (musicEnabled) smoothVolume(0.85);
+    });
+
+    // Botón manual para encender/apagar solo el tema musical de Halo
+    musicToggleBtn.addEventListener("click", () => {
+      if (musicEnabled && !bgMusicEl.paused) {
+        musicEnabled = false;
+        bgMusicEl.pause();
+        musicToggleBtn.textContent = "🔇 TEMA HALO";
+        musicToggleBtn.classList.add("muted");
+      } else {
+        const vol = (!videoEl.paused && !videoEl.ended) ? 0.28 : 0.85;
+        enableMusic(vol);
+      }
     });
 
     // Cuenta regresiva exacta al sábado 21 de noviembre de 2026 a las 7:00 PM (UTC-5 Colombia)
