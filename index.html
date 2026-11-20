@@ -3,12 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INFORME PRIORITARIO // Sábado 21 de Nov - 1900 HRS</title>
+  <title>Invitación Cumpleaños Yeison Castro // Sábado 21 de Nov - 1900 HRS</title>
 
-  <!-- Vista previa al compartir enlace en WhatsApp -->
-  <meta property="og:title" content="TRANSMISIÓN UNSC // Sábado 21 de Noviembre - 7:00 PM" />
-  <meta property="og:description" content="Atención Spartans: coordenadas fijadas en Km 7 vía La Romelia - El Pollo, al frente del CDA Villa. ¡Inicia la transmisión!" />
+  <!-- Tarjeta de vista previa para WhatsApp y redes sociales -->
+  <meta property="og:title" content="Invitación Cumpleaños Yeison Castro — Sábado 21 de Noviembre" />
+  <meta property="og:description" content="7:00 PM (1900 HRS) • Km 7 vía La Romelia - El Pollo, al frente del CDA Villa. Toca el enlace para abrir la invitación." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wilcastro920-cmd.github.io/invitacion-pin/" />
+  <meta property="og:image" content="https://wilcastro920-cmd.github.io/invitacion-pin/watermarked_img_17920711115734403107.jpg" />
+  <meta property="og:image:secure_url" content="https://wilcastro920-cmd.github.io/invitacion-pin/watermarked_img_17920711115734403107.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="600" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Invitación Cumpleaños Yeison Castro — Sábado 21 de Noviembre" />
+  <meta name="twitter:description" content="7:00 PM (1900 HRS) • Km 7 vía La Romelia - El Pollo, al frente del CDA Villa." />
+  <meta name="twitter:image" content="https://wilcastro920-cmd.github.io/invitacion-pin/watermarked_img_17920711115734403107.jpg" />
   <meta name="theme-color" content="#040812" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -449,7 +460,7 @@
         controls
       ></video>
 
-      <!-- Pantalla de inicio para activar video + música con sonido -->
+      <!-- Pantalla de inicio para activar video + banda sonora con sonido -->
       <div class="start-overlay" id="start-overlay">
         <div class="chip-ring">
           <svg width="26" height="26" fill="none" stroke="#7dd3fc" stroke-width="2.2" viewBox="0 0 24 24">
@@ -462,7 +473,7 @@
     </div>
 
     <h1>¡Atención, Spartans!</h1>
-    <p class="mission-sub">Protocolo de encuentro activado — Sábado 21 de Noviembre</p>
+    <p class="mission-sub">Cumpleaños de Yeison Castro — Sábado 21 de Noviembre</p>
 
     <div class="countdown-title" id="countdown-title">Tiempo restante para las 1900 horas</div>
 
@@ -546,7 +557,7 @@
       <div class="btn-grid">
         <a
           class="btn btn-sec"
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Encuentro+Spartans+-+S%C3%A1bado+21+de+Nov&dates=20261121T190000/20261121T230000&ctz=America/Bogota&location=Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa&details=Informe+UNSC:+Nos+vemos+a+las+7:00+PM+(1900+horas)+en+Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa."
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os+Yeison+Castro+-+S%C3%A1bado+21+de+Nov&dates=20261121T190000/20261121T230000&ctz=America/Bogota&location=Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa&details=Invitaci%C3%B3n+Cumplea%C3%B1os+Yeison+Castro:+S%C3%A1bado+21+de+noviembre+a+las+7:00+PM+(1900+horas)+en+Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa."
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -598,14 +609,12 @@
     function startFullExperience() {
       startOverlay.classList.add("hidden");
 
-      // 1. Reproduce el video con su audio activo
       videoEl.muted = false;
       videoEl.play().catch(() => {
         videoEl.muted = true;
         videoEl.play();
       });
 
-      // 2. Reproduce el tema de Halo suavemente de fondo mientras habla el video
       enableMusic(0.28);
     }
 
@@ -622,7 +631,6 @@
       }
     });
 
-    // Atenúa la música cuando el video habla y la sube cuando el video termina o se pausa
     videoEl.addEventListener("play", () => {
       if (musicEnabled) smoothVolume(0.28);
     });
@@ -635,7 +643,6 @@
       if (musicEnabled) smoothVolume(0.85);
     });
 
-    // Botón manual para encender/apagar solo el tema musical de Halo
     musicToggleBtn.addEventListener("click", () => {
       if (musicEnabled && !bgMusicEl.paused) {
         musicEnabled = false;
