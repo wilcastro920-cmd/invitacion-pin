@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>¡Estás Invitado! | Sábado 21 de Nov - 7:00 PM</title>
+  <title>Transmisión Prioritaria | Sábado 21 de Nov - 7:00 PM</title>
 
-  <!-- Etiquetas Open Graph para vista previa en WhatsApp y redes sociales -->
-  <meta property="og:title" content="¡Estás Invitado! — Sábado 21 de Noviembre" />
-  <meta property="og:description" content="Nos vemos a las 7:00 PM en Km 7 vía La Romelia - El Pollo, al frente del CDA Villa. ¡Mira cuánto falta!" />
+  <!-- Etiquetas Open Graph para vista previa en WhatsApp -->
+  <meta property="og:title" content="Transmisión Prioritaria — Sábado 21 de Noviembre" />
+  <meta property="og:description" content="Protocolo de encuentro activado: 7:00 PM en Km 7 vía La Romelia - El Pollo, al frente del CDA Villa." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b0f19" />
+  <meta name="theme-color" content="#060b19" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg-dark: #090d16;
-      --card-bg: rgba(18, 25, 42, 0.78);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --accent-gold: #f59e0b;
-      --accent-amber: #fbbf24;
-      --accent-glow: rgba(245, 158, 11, 0.28);
-      --text-main: #f8fafc;
+      --bg-dark: #050914;
+      --card-bg: rgba(10, 18, 36, 0.86);
+      --holo-cyan: #38bdf8;
+      --holo-bright: #7dd3fc;
+      --holo-violet: #a855f7;
+      --holo-glow: rgba(56, 189, 248, 0.32);
+      --violet-glow: rgba(168, 85, 247, 0.28);
+      --text-main: #f0f9ff;
       --text-muted: #94a3b8;
     }
 
@@ -37,14 +38,17 @@
       font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-dark);
       background-image:
-        radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.14), transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.12), transparent 45%);
+        radial-gradient(circle at 20% 15%, rgba(168, 85, 247, 0.18), transparent 42%),
+        radial-gradient(circle at 80% 85%, rgba(56, 189, 248, 0.16), transparent 45%),
+        linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px;
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px 16px;
+      padding: 18px 14px;
       overflow-x: hidden;
       position: relative;
     }
@@ -60,14 +64,17 @@
 
     .card {
       width: 100%;
-      max-width: 480px;
+      max-width: 490px;
       background: var(--card-bg);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid var(--card-border);
-      border-radius: 28px;
-      padding: 34px 24px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px var(--accent-glow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 26px;
+      padding: 24px 20px 28px;
+      box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.78),
+        0 0 38px var(--holo-glow),
+        inset 0 0 24px rgba(168, 85, 247, 0.12);
       text-align: center;
       position: relative;
       z-index: 10;
@@ -75,145 +82,293 @@
     }
 
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cabecera UNSC / IA */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(245, 158, 11, 0.14);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      color: var(--accent-amber);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.6px;
+      gap: 7px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--holo-bright);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 1.3px;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
-      margin-bottom: 18px;
     }
 
     .pulse-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background-color: var(--accent-amber);
-      box-shadow: 0 0 10px var(--accent-amber);
-      animation: pulse 1.6s infinite;
+      background-color: var(--holo-cyan);
+      box-shadow: 0 0 10px var(--holo-cyan);
+      animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.45); opacity: 0.5; }
+      50% { transform: scale(1.45); opacity: 0.45; }
     }
 
+    .voice-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.28), rgba(56, 189, 248, 0.25));
+      border: 1px solid rgba(192, 132, 252, 0.55);
+      color: #f3e8ff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+    }
+
+    .voice-btn:hover {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(56, 189, 248, 0.4));
+      transform: translateY(-1px);
+    }
+
+    .voice-btn.active {
+      background: linear-gradient(135deg, #9333ea, #0284c7);
+      border-color: #e9d5ff;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.55);
+    }
+
+    /* Escenario Holográfico (4 Escenas) */
+    .holo-stage {
+      position: relative;
+      width: 100%;
+      border-radius: 20px;
+      background: radial-gradient(ellipse at 50% 85%, rgba(168, 85, 247, 0.22) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(4, 8, 20, 0.92) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      overflow: hidden;
+      margin-bottom: 18px;
+      box-shadow: inset 0 0 30px rgba(56, 189, 248, 0.14);
+    }
+
+    /* Líneas de escaneo CRT/Holograma */
+    .holo-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(56, 189, 248, 0.04) 0px,
+        rgba(56, 189, 248, 0.04) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    #holo-canvas {
+      display: block;
+      width: 100%;
+      height: 235px;
+    }
+
+    /* Subtítulo / Diálogo Holográfico */
+    .holo-dialogue {
+      position: relative;
+      z-index: 4;
+      background: rgba(5, 11, 26, 0.85);
+      border-top: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    .scene-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .scene-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: #c084fc;
+      text-transform: uppercase;
+    }
+
+    .scene-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .scene-dot {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .scene-dot.active {
+      background: rgba(168, 85, 247, 0.35);
+      border-color: #c084fc;
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.45);
+    }
+
+    .dialogue-text {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #e0f2fe;
+      min-height: 38px;
+    }
+
+    .dialogue-text strong {
+      color: #7dd3fc;
+    }
+
+    .progress-bar {
+      height: 2px;
+      width: 100%;
+      background: rgba(56, 189, 248, 0.12);
+      margin-top: 8px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #a855f7, #38bdf8);
+      transition: width 0.1s linear;
+    }
+
+    /* Título y Cuenta Regresiva */
     h1 {
-      font-size: 2.1rem;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #ffffff 30%, #fcd34d 100%);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.48rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #ffffff 25%, #7dd3fc 65%, #c084fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
       color: var(--text-muted);
-      font-size: 0.98rem;
-      line-height: 1.5;
-      margin-bottom: 26px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
     }
 
-    /* Cuenta regresiva */
     .countdown-label {
-      font-size: 0.78rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 1.4px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-weight: 600;
+      letter-spacing: 1.6px;
+      color: var(--holo-bright);
+      margin-bottom: 10px;
     }
 
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 28px;
+      gap: 8px;
+      margin-bottom: 20px;
     }
 
     .time-box {
-      background: rgba(9, 13, 22, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 14px 6px;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      background: rgba(6, 13, 28, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 14px;
+      padding: 12px 4px;
+      box-shadow: inset 0 0 14px rgba(56, 189, 248, 0.08);
     }
 
     .time-value {
       display: block;
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: var(--accent-amber);
-      font-variant-numeric: tabular-nums;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--holo-cyan);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
       line-height: 1.1;
     }
 
     .time-unit {
       display: block;
-      font-size: 0.7rem;
+      font-size: 0.66rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--text-muted);
-      margin-top: 6px;
+      margin-top: 5px;
       font-weight: 600;
     }
 
     .live-banner {
       display: none;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: #090d16;
-      font-weight: 800;
-      font-size: 1.15rem;
-      padding: 16px;
-      border-radius: 16px;
-      margin-bottom: 28px;
-      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
+      background: linear-gradient(135deg, #9333ea, #0284c7);
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
     }
 
-    /* Tarjeta de recordatorio */
+    /* Recordatorio de Fecha, Hora y Lugar */
     .details-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 18px;
+      background: rgba(56, 189, 248, 0.04);
+      border: 1px solid rgba(56, 189, 248, 0.18);
+      border-radius: 18px;
+      padding: 15px;
       text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
     .detail-item {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 11px;
     }
 
     .detail-icon {
-      width: 38px;
-      height: 38px;
-      min-width: 38px;
-      border-radius: 12px;
-      background: rgba(245, 158, 11, 0.14);
-      color: var(--accent-amber);
+      width: 35px;
+      height: 35px;
+      min-width: 35px;
+      border-radius: 10px;
+      background: rgba(168, 85, 247, 0.16);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: #d8b4fe;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -221,15 +376,16 @@
 
     .detail-content strong {
       display: block;
-      font-size: 0.75rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--text-muted);
+      color: var(--holo-bright);
       margin-bottom: 2px;
     }
 
     .detail-content span {
-      font-size: 0.98rem;
+      font-size: 0.93rem;
       font-weight: 600;
       color: var(--text-main);
       line-height: 1.35;
@@ -240,7 +396,7 @@
     .actions {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
 
     .btn {
@@ -249,14 +405,14 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 14px 18px;
-      border-radius: 14px;
+      padding: 13px 16px;
+      border-radius: 13px;
       font-family: inherit;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
       border: none;
     }
 
@@ -265,43 +421,46 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: #090d16;
-      box-shadow: 0 8px 22px rgba(245, 158, 11, 0.3);
+      background: linear-gradient(135deg, #0284c7 0%, #7e22ce 100%);
+      color: #ffffff;
+      border: 1px solid rgba(125, 211, 252, 0.45);
+      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.35);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 12px 28px rgba(245, 158, 11, 0.45);
+      box-shadow: 0 12px 28px rgba(168, 85, 247, 0.45);
       transform: translateY(-1px);
     }
 
     .btn-secondary-group {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 9px;
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text-main);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 0.86rem;
-      padding: 12px 10px;
+      background: rgba(56, 189, 248, 0.08);
+      color: #e0f2fe;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      font-size: 0.84rem;
+      padding: 11px 10px;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.11);
+      background: rgba(56, 189, 248, 0.16);
     }
 
     .footer-note {
-      margin-top: 20px;
-      font-size: 0.8rem;
+      margin-top: 16px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 1px;
       color: var(--text-muted);
     }
 
     @media (max-width: 380px) {
-      .time-value { font-size: 1.55rem; }
-      h1 { font-size: 1.8rem; }
+      .time-value { font-size: 1.35rem; }
+      h1 { font-size: 1.25rem; }
       .btn-secondary-group { grid-template-columns: 1fr; }
     }
   </style>
@@ -310,16 +469,47 @@
 
   <canvas id="confetti-canvas"></canvas>
 
+  <!-- Audio opcional: si subes cortana.mp3 a tu repositorio GitHub, se reproducirá automáticamente -->
+  <audio id="cortana-audio" src="cortana.mp3" preload="auto"></audio>
+
   <main class="card">
-    <div class="badge">
-      <span class="pulse-dot"></span>
-      Invitación Especial
+    <div class="top-bar">
+      <div class="badge">
+        <span class="pulse-dot"></span>
+        IA CTN-0452 // REACH
+      </div>
+      <button type="button" class="voice-btn" id="voice-toggle">
+        🔊 Activar Voz IA
+      </button>
     </div>
 
-    <h1>¡Nos vemos este sábado!</h1>
-    <p class="subtitle">Guarda la fecha y prepárate. Aquí tienes la cuenta regresiva y todos los datos para llegar sin perderte.</p>
+    <!-- Escenario Holográfico de 4 Escenas -->
+    <section class="holo-stage" aria-label="Proyección Holográfica de 4 Escenas">
+      <canvas id="holo-canvas"></canvas>
 
-    <div class="countdown-label" id="countdown-title">Faltan exactamente</div>
+      <div class="holo-dialogue">
+        <div class="scene-header">
+          <span class="scene-tag" id="scene-tag">ESCENA 01 // DESPLIEGUE</span>
+          <div class="scene-dots">
+            <button type="button" class="scene-dot active" data-scene="0">01</button>
+            <button type="button" class="scene-dot" data-scene="1">02</button>
+            <button type="button" class="scene-dot" data-scene="2">03</button>
+            <button type="button" class="scene-dot" data-scene="3">04</button>
+          </div>
+        </div>
+        <div class="dialogue-text" id="dialogue-text">
+          <strong>"Enlace establecido."</strong> Tengo una transmisión prioritaria para ti este sábado.
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <h1>¡Nos vemos este sábado!</h1>
+    <p class="subtitle">Revisa los parámetros de la misión y prepárate para el encuentro.</p>
+
+    <div class="countdown-label" id="countdown-title">Tiempo restante para el encuentro</div>
 
     <div class="countdown-grid" id="countdown-grid">
       <div class="time-box">
@@ -341,14 +531,14 @@
     </div>
 
     <div class="live-banner" id="live-banner">
-      🎉 ¡Llegó la hora! Te esperamos ya mismo 🎉
+      ⚡ ¡PROTOCOLO INICIADO! TE ESPERAMOS YA MISMO ⚡
     </div>
 
     <!-- Recordatorio de Fecha, Hora y Lugar -->
     <section class="details-box" aria-label="Detalles del evento">
       <div class="detail-item">
         <div class="detail-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
             <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -356,44 +546,656 @@
           </svg>
         </div>
         <div class="detail-content">
-          <strong>Fecha</strong>
+          <strong>Fecha Confirmada</strong>
           <span>Sábado, 21 de noviembre de 2026</span>
         </div>
       </div>
 
       <div class="detail-item">
         <div class="detail-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
         </div>
         <div class="detail-content">
-          <strong>Hora</strong>
+          <strong>Hora de Inicio</strong>
           <span>7:00 PM (Hora Colombia)</span>
         </div>
       </div>
 
       <div class="detail-item">
         <div class="detail-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
         </div>
         <div class="detail-content">
-          <strong>Lugar</strong>
+          <strong>Coordenadas del Lugar</strong>
           <span>Km 7 vía La Romelia – El Pollo, al frente del CDA Villa</span>
         </div>
       </div>
     </section>
 
     <div class="actions">
-      <!-- BOTÓN DE GOOGLE MAPS: si deseas cambiar el pin, reemplaza SOLO la URL dentro de las comillas de href="..." -->
       <a
         class="btn btn-primary"
         href="https://www.google.com/maps/search/?api=1&query=CDA+Villa+Dosquebradas&query_place_id=ChIJf1C5cVmHOI4R04hEBh9r1f8"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        Abrir en Google Maps
+      </a>
+
+      <div class="btn-secondary-group">
+        <a
+          class="btn btn-secondary"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Encuentro+S%C3%A1bado+21+de+Nov&dates=20261121T190000/20261121T230000&ctz=America/Bogota&location=Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa&details=Recordatorio:+Nos+vemos+a+las+7:00+PM+en+Km+7+v%C3%ADa+La+Romelia+-+El+Pollo,+al+frente+del+CDA+Villa."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📅 Agendar
+        </a>
+
+        <button type="button" class="btn btn-secondary" id="copy-btn">
+          📋 Copiar lugar
+        </button>
+      </div>
+    </div>
+
+    <p class="footer-note">TRANSMISIÓN VERIFICADA • TE ESPERAMOS PUNTUAL</p>
+  </main>
+
+  <script>
+    // =========================================================
+    // 1. DEFINICIÓN DE LAS 4 ESCENAS HOLOGRÁFICAS (CORTANA REACH)
+    // =========================================================
+    const scenes = [
+      {
+        tag: "ESCENA 01 // DESPLIEGUE DE IA",
+        html: '<strong>"Enlace establecido."</strong> Tengo una transmisión prioritaria para ti este sábado.',
+        speech: "Enlace establecido. Hola, tengo una transmisión prioritaria para ti este sábado veintiuno de noviembre.",
+        duration: 6500
+      },
+      {
+        tag: "ESCENA 02 // FECHA Y HORA",
+        html: 'Ventana programada: <strong>Sábado 21 de noviembre a las 7:00 PM</strong>. Marca tu cronómetro.',
+        speech: "La cita está programada para el sábado veintiuno de noviembre a las siete de la noche, hora Colombia.",
+        duration: 6800
+      },
+      {
+        tag: "ESCENA 03 // COORDENADAS TÁCTICAS",
+        html: 'Punto de encuentro: <strong>Km 7 vía La Romelia – El Pollo</strong>, justo al frente del <strong>CDA Villa</strong>.',
+        speech: "Coordenadas fijadas: kilómetro siete, vía La Romelia, El Pollo, justo al frente del C D A Villa.",
+        duration: 7200
+      },
+      {
+        tag: "ESCENA 04 // SINCRONIZACIÓN",
+        html: 'Cuenta regresiva activa abajo. <strong>Abre el mapa</strong> para trazar tu ruta. ¡Nos vemos ahí!',
+        speech: "Cuenta regresiva sincronizada. Abre el mapa para trazar tu ruta. ¡Te esperamos puntual!",
+        duration: 6800
+      }
+    ];
+
+    let currentScene = 0;
+    let sceneStartTime = performance.now();
+    let voiceEnabled = false;
+    let isSpeaking = false;
+    let deployProgress = 0;
+
+    const sceneTagEl = document.getElementById("scene-tag");
+    const dialogueTextEl = document.getElementById("dialogue-text");
+    const progressFillEl = document.getElementById("progress-fill");
+    const sceneDots = document.querySelectorAll(".scene-dot");
+    const voiceToggleBtn = document.getElementById("voice-toggle");
+    const customAudioEl = document.getElementById("cortana-audio");
+
+    // =========================================================
+    // 2. SISTEMA DE VOZ Y EFECTOS SONOROS HOLOGRÁFICOS
+    // =========================================================
+    let audioCtx = null;
+
+    function playHoloChirp(freqStart = 520, freqEnd = 980) {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === "suspended") audioCtx.resume();
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freqStart, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(freqEnd, audioCtx.currentTime + 0.18);
+
+        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.22);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.23);
+      } catch (e) {}
+    }
+
+    function speakScene(index) {
+      if (!voiceEnabled) return;
+
+      // Si existe un archivo cortana.mp3 en el repo, lo usa en la escena 0
+      if (customAudioEl && customAudioEl.readyState >= 2 && index === 0) {
+        customAudioEl.currentTime = 0;
+        customAudioEl.play().then(() => {
+          isSpeaking = true;
+          customAudioEl.onended = () => { isSpeaking = false; };
+        }).catch(() => synthesizeSpeech(scenes[index].speech));
+        return;
+      }
+
+      synthesizeSpeech(scenes[index].speech);
+    }
+
+    function synthesizeSpeech(text) {
+      if (!("speechSynthesis" in window)) return;
+      window.speechSynthesis.cancel();
+
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "es-CO";
+      utter.rate = 1.02;
+      utter.pitch = 1.12;
+
+      const voices = window.speechSynthesis.getVoices();
+      const preferredVoice = voices.find(v =>
+        /es/i.test(v.lang) && /(sabina|helena|paulina|monica|laura|google|female|mujer)/i.test(v.name)
+      ) || voices.find(v => /es/i.test(v.lang));
+
+      if (preferredVoice) utter.voice = preferredVoice;
+
+      utter.onstart = () => { isSpeaking = true; };
+      utter.onend = () => { isSpeaking = false; };
+      utter.onerror = () => { isSpeaking = false; };
+
+      window.speechSynthesis.speak(utter);
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    voiceToggleBtn.addEventListener("click", () => {
+      voiceEnabled = !voiceEnabled;
+      if (voiceEnabled) {
+        voiceToggleBtn.classList.add("active");
+        voiceToggleBtn.textContent = "🔊 Voz IA Activa";
+        playHoloChirp(440, 1040);
+        speakScene(currentScene);
+      } else {
+        voiceToggleBtn.classList.remove("active");
+        voiceToggleBtn.textContent = "🔇 Voz Silenciada";
+        isSpeaking = false;
+        if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+        if (customAudioEl) customAudioEl.pause();
+      }
+    });
+
+    function setScene(index, manual = false) {
+      currentScene = index;
+      sceneStartTime = performance.now();
+      if (index === 0) deployProgress = 0;
+
+      const sc = scenes[index];
+      sceneTagEl.textContent = sc.tag;
+      dialogueTextEl.innerHTML = sc.html;
+
+      sceneDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+
+      if (voiceEnabled || manual) {
+        playHoloChirp(index % 2 === 0 ? 540 : 680, 1120);
+      }
+      if (voiceEnabled) {
+        speakScene(index);
+      }
+    }
+
+    sceneDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = Number(dot.dataset.scene);
+        setScene(idx, true);
+      });
+    });
+
+    // =========================================================
+    // 3. RENDERIZADO HOLOGRÁFICO EN CANVAS (4 ESCENAS VISUALES)
+    // =========================================================
+    const canvas = document.getElementById("holo-canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeHoloCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resizeHoloCanvas();
+    window.addEventListener("resize", resizeHoloCanvas);
+
+    // Partículas ascendentes del proyector
+    const particles = Array.from({ length: 34 }, () => ({
+      x: Math.random(),
+      y: Math.random(),
+      r: Math.random() * 1.8 + 0.6,
+      speed: Math.random() * 0.004 + 0.0015,
+      violet: Math.random() > 0.45
+    }));
+
+    function drawCortanaSilhouette(cx, baseY, t, glitchX) {
+      ctx.save();
+      ctx.translate(cx + glitchX, baseY);
+
+      const breathe = Math.sin(t * 2.4) * 2.2;
+      const bodyGrad = ctx.createLinearGradient(0, -175, 0, -15);
+      bodyGrad.addColorStop(0, "rgba(192, 132, 252, 0.92)");
+      bodyGrad.addColorStop(0.45, "rgba(56, 189, 248, 0.85)");
+      bodyGrad.addColorStop(1, "rgba(126, 34, 206, 0.18)");
+
+      ctx.strokeStyle = "rgba(125, 211, 252, 0.95)";
+      ctx.fillStyle = bodyGrad;
+      ctx.lineWidth = 1.6;
+      ctx.shadowColor = "rgba(168, 85, 247, 0.85)";
+      ctx.shadowBlur = 16;
+
+      // Torso / Hombros estilizados
+      ctx.beginPath();
+      ctx.moveTo(-44, -18);
+      ctx.quadraticCurveTo(-42, -62, -24, -74);
+      ctx.lineTo(-10, -82);
+      ctx.lineTo(-8, -94);
+      ctx.lineTo(8, -94);
+      ctx.lineTo(10, -82);
+      ctx.lineTo(24, -74);
+      ctx.quadraticCurveTo(42, -62, 44, -18);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // Líneas de circuitos internos en el torso (estilo Halo Reach)
+      ctx.strokeStyle = "rgba(224, 242, 254, 0.55)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(-18, -70);
+      ctx.lineTo(-10, -52);
+      ctx.lineTo(-14, -28);
+      ctx.moveTo(18, -70);
+      ctx.lineTo(10, -52);
+      ctx.lineTo(14, -28);
+      ctx.moveTo(0, -78);
+      ctx.lineTo(0, -32);
+      ctx.stroke();
+
+      // Cabeza y corte de cabello holográfico característico de Cortana
+      ctx.save();
+      ctx.translate(0, breathe * 0.6);
+
+      // Cabello / casco de datos
+      ctx.fillStyle = "rgba(168, 85, 247, 0.72)";
+      ctx.strokeStyle = "rgba(192, 132, 252, 0.95)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(-22, -104);
+      ctx.quadraticCurveTo(-27, -138, 0, -142);
+      ctx.quadraticCurveTo(27, -138, 22, -104);
+      ctx.lineTo(16, -98);
+      ctx.lineTo(14, -118);
+      ctx.lineTo(-14, -118);
+      ctx.lineTo(-16, -98);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // Rostro holográfico
+      ctx.fillStyle = "rgba(56, 189, 248, 0.45)";
+      ctx.beginPath();
+      ctx.ellipse(0, -114, 13.5, 17, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      // Ojos luminosos de IA
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "#38bdf8";
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.ellipse(-5.2, -115, 2.4, 1.3, -0.1, 0, Math.PI * 2);
+      ctx.ellipse(5.2, -115, 2.4, 1.3, 0.1, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Pulso de voz en labios / núcleo
+      const mouthPulse = isSpeaking ? Math.abs(Math.sin(t * 18)) * 2.4 + 0.8 : 0.8;
+      ctx.fillStyle = "rgba(224, 242, 254, 0.9)";
+      ctx.beginPath();
+      ctx.ellipse(0, -104, 3.5, mouthPulse * 0.55, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.restore();
+      ctx.restore();
+    }
+
+    function drawSceneVisuals(w, h, cx, baseY, t) {
+      // Elementos gráficos propios de cada una de las 4 escenas
+      if (currentScene === 0) {
+        // ESCENA 1: Anillos orbitales de despliegue + Onda de voz
+        for (let i = 0; i < 3; i++) {
+          ctx.save();
+          ctx.translate(cx, baseY - 92);
+          ctx.rotate(t * (0.5 + i * 0.25) * (i % 2 === 0 ? 1 : -1));
+          ctx.strokeStyle = i === 1 ? "rgba(192, 132, 252, 0.45)" : "rgba(56, 189, 248, 0.38)";
+          ctx.lineWidth = 1.4;
+          ctx.setLineDash([18, 12]);
+          ctx.beginPath();
+          ctx.arc(0, 0, 62 + i * 16, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.restore();
+        }
+      } else if (currentScene === 1) {
+        // ESCENA 2: Cronómetro orbital y tarjeta de fecha flotante
+        const cardX = cx + 76;
+        const cardY = baseY - 125 + Math.sin(t * 2.5) * 4;
+
+        ctx.save();
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.65)";
+        ctx.fillStyle = "rgba(8, 20, 44, 0.72)";
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.roundRect(cardX - 54, cardY - 28, 108, 56, 10);
+        ctx.fill();
+        ctx.stroke();
+
+        // Línea conectora hacia la IA
+        ctx.beginPath();
+        ctx.moveTo(cx + 28, baseY - 105);
+        ctx.lineTo(cardX - 54, cardY);
+        ctx.stroke();
+
+        ctx.fillStyle = "#c084fc";
+        ctx.font = "700 10px Orbitron, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("SÁB 21 NOV", cardX, cardY - 6);
+
+        ctx.fillStyle = "#38bdf8";
+        ctx.font = "900 14px Orbitron, sans-serif";
+        ctx.fillText("19:00 HRS", cardX, cardY + 14);
+        ctx.restore();
+      } else if (currentScene === 2) {
+        // ESCENA 3: Radar táctico de geolocalización (CDA Villa)
+        const rx = cx - 82;
+        const ry = baseY - 115;
+        ctx.save();
+        ctx.translate(rx, ry);
+
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.5)";
+        ctx.fillStyle = "rgba(6, 18, 38, 0.7)";
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(0, 0, 34, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(0, 0, 18, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Barrido del radar
+        ctx.rotate(t * 2.8);
+        const sweep = ctx.createLinearGradient(0, 0, 34, 0);
+        sweep.addColorStop(0, "rgba(168, 85, 247, 0.5)");
+        sweep.addColorStop(1, "rgba(56, 189, 248, 0)");
+        ctx.fillStyle = sweep;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, 33, -0.4, 0.4);
+        ctx.closePath();
+        ctx.fill();
+
+        // Punto parpadeante del lugar
+        ctx.rotate(-t * 2.8);
+        ctx.fillStyle = Math.sin(t * 8) > 0 ? "#f472b6" : "#38bdf8";
+        ctx.beginPath();
+        ctx.arc(10, -8, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        // Etiqueta KM 7
+        ctx.save();
+        ctx.fillStyle = "#7dd3fc";
+        ctx.font = "700 9px Orbitron, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("KM 7 • CDA VILLA", rx, ry + 48);
+        ctx.restore();
+      } else if (currentScene === 3) {
+        // ESCENA 4: Ondas de frecuencia de voz / sincronización activa
+        ctx.save();
+        const bars = 18;
+        for (let i = 0; i < bars; i++) {
+          const offset = (i - bars / 2) * 11;
+          const amp = isSpeaking
+            ? (Math.sin(t * 14 + i) * 0.5 + 0.5) * 24 + 4
+            : (Math.sin(t * 3 + i * 0.7) * 0.5 + 0.5) * 8 + 3;
+          ctx.fillStyle = i % 2 === 0 ? "rgba(56, 189, 248, 0.65)" : "rgba(192, 132, 252, 0.65)";
+          ctx.fillRect(cx + offset - 2, baseY - 165 - amp / 2, 4, amp);
+        }
+        ctx.restore();
+      }
+    }
+
+    function renderHoloFrame(now) {
+      const w = canvas.getBoundingClientRect().width;
+      const h = canvas.getBoundingClientRect().height;
+      const t = now * 0.001;
+
+      // Progreso automático de las 4 escenas
+      const elapsed = now - sceneStartTime;
+      const currentDuration = scenes[currentScene].duration;
+      const pct = Math.min((elapsed / currentDuration) * 100, 100);
+      progressFillEl.style.width = pct + "%";
+
+      if (elapsed >= currentDuration) {
+        setScene((currentScene + 1) % scenes.length, false);
+      }
+
+      if (deployProgress < 1) {
+        deployProgress = Math.min(deployProgress + 0.025, 1);
+      }
+
+      ctx.clearRect(0, 0, w, h);
+
+      const cx = w / 2;
+      const baseY = h - 18;
+
+      // 1. Base del proyector UNSC
+      const baseGrad = ctx.createLinearGradient(cx - 75, baseY, cx + 75, baseY);
+      baseGrad.addColorStop(0, "rgba(56, 189, 248, 0.1)");
+      baseGrad.addColorStop(0.5, "rgba(56, 189, 248, 0.85)");
+      baseGrad.addColorStop(1, "rgba(56, 189, 248, 0.1)");
+
+      ctx.fillStyle = baseGrad;
+      ctx.beginPath();
+      ctx.ellipse(cx, baseY, 72, 9, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Haz de luz cónico ascendente
+      const beamGrad = ctx.createLinearGradient(cx, baseY, cx, 22);
+      beamGrad.addColorStop(0, "rgba(56, 189, 248, 0.28)");
+      beamGrad.addColorStop(0.6, "rgba(168, 85, 247, 0.12)");
+      beamGrad.addColorStop(1, "rgba(56, 189, 248, 0)");
+
+      ctx.fillStyle = beamGrad;
+      ctx.beginPath();
+      ctx.moveTo(cx - 56, baseY);
+      ctx.lineTo(cx - 115, 20);
+      ctx.lineTo(cx + 115, 20);
+      ctx.lineTo(cx + 56, baseY);
+      ctx.closePath();
+      ctx.fill();
+
+      // 2. Partículas holográficas flotantes
+      particles.forEach((p) => {
+        p.y -= p.speed;
+        if (p.y < 0.08) p.y = 0.95;
+        const px = cx + (p.x - 0.5) * 180;
+        const py = p.y * (baseY - 12);
+        ctx.fillStyle = p.violet ? "rgba(192, 132, 252, 0.65)" : "rgba(56, 189, 248, 0.7)";
+        ctx.beginPath();
+        ctx.arc(px, py, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3. Recorte progresivo de despliegue + micro-glitch aleatorio
+      const glitchX = Math.random() > 0.965 ? (Math.random() - 0.5) * 7 : 0;
+
+      ctx.save();
+      const revealTop = baseY - deployProgress * 185;
+      ctx.beginPath();
+      ctx.rect(0, revealTop, w, baseY - revealTop);
+      ctx.clip();
+
+      drawSceneVisuals(w, h, cx, baseY, t);
+      drawCortanaSilhouette(cx, baseY, t, glitchX);
+
+      // Línea láser de escaneo vertical
+      const scanY = baseY - ((t * 75) % 175);
+      ctx.strokeStyle = "rgba(125, 211, 252, 0.45)";
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(cx - 65, scanY);
+      ctx.lineTo(cx + 65, scanY);
+      ctx.stroke();
+
+      ctx.restore();
+
+      // Texto técnico en esquinas del HUD
+      ctx.fillStyle = "rgba(125, 211, 252, 0.55)";
+      ctx.font = "600 9px Orbitron, sans-serif";
+      ctx.textAlign = "left";
+      ctx.fillText("UNSC // HOLO-LINK", 12, 18);
+      ctx.textAlign = "right";
+      ctx.fillText(`0${currentScene + 1} / 04`, w - 12, 18);
+
+      requestAnimationFrame(renderHoloFrame);
+    }
+    requestAnimationFrame(renderHoloFrame);
+
+    // =========================================================
+    // 4. CUENTA REGRESIVA EXACTA (SÁBADO 21 NOV 2026 - 7:00 PM)
+    // =========================================================
+    const targetDate = new Date("2026-11-21T19:00:00-05:00").getTime();
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const gridEl = document.getElementById("countdown-grid");
+    const titleEl = document.getElementById("countdown-title");
+    const bannerEl = document.getElementById("live-banner");
+
+    let celebrationStarted = false;
+
+    function pad(num) {
+      return String(num).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        gridEl.style.display = "none";
+        titleEl.style.display = "none";
+        bannerEl.style.display = "block";
+        if (!celebrationStarted) {
+          celebrationStarted = true;
+          launchConfetti();
+        }
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = pad(days);
+      hoursEl.textContent = pad(hours);
+      minutesEl.textContent = pad(minutes);
+      secondsEl.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Copiar dirección al portapapeles
+    const copyBtn = document.getElementById("copy-btn");
+    const addressText = "Km 7 vía La Romelia - El Pollo, al frente del CDA Villa";
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(addressText);
+        const original = copyBtn.innerHTML;
+        copyBtn.innerHTML = "✅ ¡Copiado!";
+        setTimeout(() => { copyBtn.innerHTML = original; }, 2200);
+      } catch (e) {
+        prompt("Copia la dirección:", addressText);
+      }
+    });
+
+    // Confeti holográfico cuando llega la hora
+    function launchConfetti() {
+      const cCanvas = document.getElementById("confetti-canvas");
+      const cCtx = cCanvas.getContext("2d");
+      cCanvas.width = window.innerWidth;
+      cCanvas.height = window.innerHeight;
+
+      const colors = ["#38bdf8", "#a855f7", "#c084fc", "#7dd3fc", "#ffffff"];
+      const pieces = Array.from({ length: 110 }, () => ({
+        x: Math.random() * cCanvas.width,
+        y: Math.random() * cCanvas.height - cCanvas.height,
+        w: Math.random() * 9 + 5,
+        h: Math.random() * 5 + 3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        speedY: Math.random() * 3 + 2,
+        speedX: (Math.random() - 0.5) * 2,
+        angle: Math.random() * 360,
+        spin: (Math.random() - 0.5) * 8
+      }));
+
+      function draw() {
+        cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
+        pieces.forEach((p) => {
+          cCtx.save();
+          cCtx.translate(p.x, p.y);
+          cCtx.rotate((p.angle * Math.PI) / 180);
+          cCtx.fillStyle = p.color;
+          cCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          cCtx.restore();
+
+          p.y += p.speedY;
+          p.x += p.speedX;
+          p.angle += p.spin;
+
+          if (p.y > cCanvas.height) {
+            p.y = -10;
+            p.x = Math.random() * cCanvas.width;
+          }
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+  </script>
+</body>
+</html>
