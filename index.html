@@ -6,7 +6,7 @@
   <title>INFORME PRIORITARIO // Sábado 21 de Nov - 1900 HRS</title>
 
   <!-- Vista previa al compartir enlace en WhatsApp -->
-  <meta property="og:title" content="TRANSMSIÓN UNSC // Sábado 21 de Noviembre - 7:00 PM" />
+  <meta property="og:title" content="TRANSMISIÓN UNSC // Sábado 21 de Noviembre - 7:00 PM" />
   <meta property="og:description" content="Atención Spartans: coordenadas fijadas en Km 7 vía La Romelia - El Pollo, al frente del CDA Villa. ¡Inicia la transmisión!" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#040812" />
@@ -17,8 +17,8 @@
 
   <style>
     :root {
-      --bg-deep: #030711;
-      --panel-bg: rgba(8, 16, 32, 0.9);
+      --bg-deep: #02050d;
+      --panel-bg: rgba(7, 14, 28, 0.92);
       --halo-blue: #38bdf8;
       --halo-ice: #bae6fd;
       --halo-alert: #f97316;
@@ -37,10 +37,10 @@
       font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-deep);
       background-image:
-        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.16), transparent 50%),
-        radial-gradient(circle at 50% 100%, rgba(14, 116, 144, 0.18), transparent 50%),
-        linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.18), transparent 52%),
+        radial-gradient(circle at 50% 100%, rgba(14, 116, 144, 0.2), transparent 52%),
+        linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
       background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
       color: var(--text-main);
       min-height: 100vh;
@@ -64,13 +64,13 @@
       width: 100%;
       max-width: 480px;
       background: var(--panel-bg);
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      border: 1px solid rgba(56, 189, 248, 0.38);
       border-radius: 22px;
       padding: 18px 16px 24px;
       box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.85),
-        0 0 35px rgba(56, 189, 248, 0.22),
-        inset 0 0 20px rgba(56, 189, 248, 0.08);
+        0 28px 65px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(56, 189, 248, 0.24),
+        inset 0 0 24px rgba(56, 189, 248, 0.08);
       position: relative;
       z-index: 10;
     }
@@ -89,7 +89,7 @@
       align-items: center;
       gap: 7px;
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.64rem;
+      font-size: 0.63rem;
       font-weight: 700;
       letter-spacing: 1.4px;
       color: var(--halo-ice);
@@ -135,12 +135,12 @@
     .cinema-viewport {
       position: relative;
       width: 100%;
-      height: 295px;
+      height: 315px;
       border-radius: 16px;
       overflow: hidden;
-      background: #02050c;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+      background: #010308;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.95), 0 0 22px rgba(56, 189, 248, 0.16);
       margin-bottom: 14px;
     }
 
@@ -154,7 +154,7 @@
     .start-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(6, 18, 40, 0.82), rgba(2, 5, 12, 0.94));
+      background: radial-gradient(circle at center, rgba(6, 18, 40, 0.84), rgba(2, 5, 12, 0.96));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -163,7 +163,7 @@
       z-index: 15;
       padding: 20px;
       text-align: center;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.45s ease;
     }
 
     .start-overlay.hidden {
@@ -172,20 +172,20 @@
     }
 
     .chip-ring {
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      border: 2px solid rgba(56, 189, 248, 0.7);
+      border: 2px solid rgba(56, 189, 248, 0.75);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.45), inset 0 0 15px rgba(56, 189, 248, 0.35);
-      animation: spinSlow 8s linear infinite;
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.55), inset 0 0 16px rgba(56, 189, 248, 0.4);
+      animation: pulseRing 2.2s ease-in-out infinite;
     }
 
-    @keyframes spinSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes pulseRing {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.07); }
     }
 
     .start-btn {
@@ -194,22 +194,22 @@
       font-weight: 900;
       letter-spacing: 1.4px;
       color: #030711;
-      background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+      background: linear-gradient(135deg, #bae6fd, #38bdf8);
       border: none;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border-radius: 10px;
       cursor: pointer;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.65);
+      box-shadow: 0 0 26px rgba(56, 189, 248, 0.7);
       text-transform: uppercase;
     }
 
     .start-hint {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       color: var(--halo-ice);
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
-    /* Franja de subtítulos estilo TikTok del video */
+    /* Franja de subtítulos estilo TikTok */
     .tiktok-subtitle-bar {
       position: absolute;
       left: 0;
@@ -217,9 +217,9 @@
       bottom: 34px;
       background: linear-gradient(
         90deg,
-        rgba(226, 232, 240, 0.78) 0%,
-        rgba(255, 255, 255, 0.94) 50%,
-        rgba(203, 213, 225, 0.78) 100%
+        rgba(226, 232, 240, 0.8) 0%,
+        rgba(255, 255, 255, 0.95) 50%,
+        rgba(203, 213, 225, 0.8) 100%
       );
       color: #0f172a;
       font-family: 'Rajdhani', sans-serif;
@@ -228,21 +228,22 @@
       line-height: 1.2;
       padding: 6px 12px;
       text-align: center;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
       z-index: 8;
       letter-spacing: 0.2px;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     .tiktok-subtitle-bar.chief-line {
       background: linear-gradient(
         90deg,
-        rgba(20, 45, 30, 0.88) 0%,
-        rgba(34, 84, 52, 0.95) 50%,
-        rgba(20, 45, 30, 0.88) 100%
+        rgba(20, 45, 30, 0.9) 0%,
+        rgba(34, 84, 52, 0.96) 50%,
+        rgba(20, 45, 30, 0.9) 100%
       );
       color: #dcfce7;
-      border-top: 1px solid rgba(74, 222, 128, 0.5);
-      border-bottom: 1px solid rgba(74, 222, 128, 0.5);
+      border-top: 1px solid rgba(74, 222, 128, 0.55);
+      border-bottom: 1px solid rgba(74, 222, 128, 0.55);
     }
 
     /* Controles inferiores del visor (4 escenas) */
@@ -252,8 +253,8 @@
       right: 0;
       bottom: 0;
       height: 30px;
-      background: rgba(3, 7, 17, 0.9);
-      border-top: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(2, 6, 15, 0.94);
+      border-top: 1px solid rgba(56, 189, 248, 0.28);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -280,7 +281,7 @@
       font-weight: 700;
       padding: 2px 7px;
       border-radius: 4px;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.32);
       background: rgba(56, 189, 248, 0.08);
       color: var(--text-dim);
       cursor: pointer;
@@ -290,6 +291,7 @@
       background: #38bdf8;
       color: #030711;
       border-color: #bae6fd;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
     }
 
     /* Título y Cuenta Regresiva */
@@ -485,7 +487,7 @@
     }
 
     @media (max-width: 380px) {
-      .cinema-viewport { height: 265px; }
+      .cinema-viewport { height: 280px; }
       .time-val { font-size: 1.28rem; }
       .btn-grid { grid-template-columns: 1fr; }
     }
@@ -494,9 +496,6 @@
 <body>
 
   <canvas id="confetti-canvas"></canvas>
-
-  <!-- Audio opcional: si subes cortana.mp3 al repo, se usará automáticamente -->
-  <audio id="custom-voice" src="cortana.mp3" preload="auto"></audio>
 
   <main class="card">
     <div class="hud-header">
@@ -514,7 +513,7 @@
       <!-- Pantalla de inicio para desbloquear audio y música épica -->
       <div class="start-overlay" id="start-overlay">
         <div class="chip-ring">
-          <svg width="28" height="28" fill="none" stroke="#7dd3fc" stroke-width="2" viewBox="0 0 24 24">
+          <svg width="28" height="28" fill="none" stroke="#7dd3fc" stroke-width="2.2" viewBox="0 0 24 24">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
         </div>
@@ -732,6 +731,7 @@
     let isSpeaking = false;
     let currentSpeaker = "cortana";
     let materialize = 0;
+    let transitionGlitch = 0;
 
     const subtitleBar = document.getElementById("subtitle-bar");
     const sceneLabel = document.getElementById("scene-label");
@@ -739,7 +739,6 @@
     const startOverlay = document.getElementById("start-overlay");
     const startBtn = document.getElementById("start-btn");
     const audioToggle = document.getElementById("audio-toggle");
-    const customVoiceEl = document.getElementById("custom-voice");
 
     // =========================================================
     // 2. MOTOR DE VOZ (CORTANA + JEFE MAESTRO) Y MÚSICA HALO
@@ -755,7 +754,6 @@
       if (audioCtx.state === "suspended") audioCtx.resume();
     }
 
-    // Pulso cinemático estilo Halo + riff épico en la escena 4
     function startHaloMusic() {
       if (bgmTimer) return;
       ensureAudioCtx();
@@ -767,7 +765,6 @@
         if (!audioEnabled || !audioCtx) return;
         const now = audioCtx.currentTime;
 
-        // Bajo táctico continuo
         const bass = audioCtx.createOscillator();
         const bassGain = audioCtx.createGain();
         bass.type = currentScene === 3 ? "sawtooth" : "triangle";
@@ -832,13 +829,11 @@
       const esVoices = voices.filter(v => /es/i.test(v.lang));
 
       if (speaker === "chief") {
-        // Voz grave tipo Jefe Maestro
         const maleVoice = esVoices.find(v => /(pablo|jorge|diego|raul|carlos|male|hombre)/i.test(v.name));
         if (maleVoice) utter.voice = maleVoice;
         utter.pitch = 0.62;
         utter.rate = 0.92;
       } else {
-        // Voz femenina IA Cortana
         const femaleVoice = esVoices.find(v => /(sabina|helena|paulina|monica|laura|google|female|mujer)/i.test(v.name));
         if (femaleVoice) utter.voice = femaleVoice;
         utter.pitch = 1.14;
@@ -860,6 +855,7 @@
       currentScene = idx;
       sceneStart = performance.now();
       triggeredSteps.clear();
+      transitionGlitch = 1.0;
       if (idx === 0) materialize = 0;
 
       sceneLabel.textContent = scenes[idx].label;
@@ -901,14 +897,14 @@
     });
 
     // =========================================================
-    // 3. ANIMACIÓN HOLOGRÁFICA DE 4 ESCENAS EN CANVAS
+    // 3. MOTOR DE RENDERIZADO HOLOGRÁFICO DE ALTA CALIDAD
     // =========================================================
     const canvas = document.getElementById("holo-canvas");
     const ctx = canvas.getContext("2d");
 
     function resizeCanvas() {
       const rect = canvas.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -916,316 +912,699 @@
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    function drawCortana(x, y, scale, t, glitchX = 0) {
+    // Helper seguro para rectángulos redondeados en cualquier navegador móvil
+    function drawRoundRect(x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    // Estrellas y partículas ambientales
+    const stars = Array.from({ length: 55 }, () => ({
+      x: Math.random(),
+      y: Math.random() * 0.72,
+      r: Math.random() * 1.4 + 0.3,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    const dataParticles = Array.from({ length: 42 }, () => ({
+      x: (Math.random() - 0.5) * 140,
+      y: Math.random() * 180,
+      speed: Math.random() * 28 + 14,
+      size: Math.random() * 2 + 0.8,
+      alpha: Math.random() * 0.7 + 0.3
+    }));
+
+    // Columnas de flujo binario interno para el shader de Cortana
+    const matrixColumns = Array.from({ length: 14 }, (_, i) => ({
+      x: -36 + i * 5.5,
+      speed: 24 + (i % 4) * 9,
+      offset: i * 17
+    }));
+    const hexChars = "01A7F9C4E2";
+
+    // Pedestal proyector UNSC con anillos giroscópicos 3D
+    function drawHoloPedestal(cx, baseY, t, intensity = 1) {
       ctx.save();
-      ctx.translate(x + glitchX, y);
-      ctx.scale(scale, scale);
+      ctx.globalCompositeOperation = "lighter";
 
-      const floatY = Math.sin(t * 2.5) * 2.5;
-      ctx.translate(0, floatY);
+      // Haz volumétrico cónico
+      const beam = ctx.createLinearGradient(cx, baseY, cx, baseY - 195);
+      beam.addColorStop(0, `rgba(56, 189, 248, ${0.42 * intensity})`);
+      beam.addColorStop(0.55, `rgba(14, 165, 233, ${0.14 * intensity})`);
+      beam.addColorStop(1, "rgba(56, 189, 248, 0)");
 
-      // Aura holográfica azul cian (fiel al tono azul del video)
-      ctx.shadowColor = "#38bdf8";
-      ctx.shadowBlur = 18;
-
-      const grad = ctx.createLinearGradient(0, -165, 0, 0);
-      grad.addColorStop(0, "rgba(186, 230, 253, 0.95)");
-      grad.addColorStop(0.5, "rgba(56, 189, 248, 0.85)");
-      grad.addColorStop(1, "rgba(2, 132, 199, 0.15)");
-
-      // Silueta estilizada Cortana Halo Reach
-      ctx.fillStyle = grad;
-      ctx.strokeStyle = "#e0f2fe";
-      ctx.lineWidth = 1.5;
-
-      // Torso y brazos
+      ctx.fillStyle = beam;
       ctx.beginPath();
-      ctx.moveTo(-36, -10);
-      ctx.quadraticCurveTo(-35, -58, -20, -72);
-      ctx.lineTo(-8, -80);
-      ctx.lineTo(-7, -92);
-      ctx.lineTo(7, -92);
-      ctx.lineTo(8, -80);
-      ctx.lineTo(20, -72);
-      ctx.quadraticCurveTo(35, -58, 36, -10);
+      ctx.moveTo(cx - 34, baseY);
+      ctx.lineTo(cx - 88, baseY - 195);
+      ctx.lineTo(cx + 88, baseY - 195);
+      ctx.lineTo(cx + 34, baseY);
       ctx.closePath();
       ctx.fill();
-      ctx.stroke();
 
-      // Líneas luminosas del traje de datos
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.7)";
-      ctx.lineWidth = 1.1;
-      ctx.beginPath();
-      ctx.moveTo(-15, -68);
-      ctx.lineTo(-9, -46);
-      ctx.lineTo(-13, -20);
-      ctx.moveTo(15, -68);
-      ctx.lineTo(9, -46);
-      ctx.lineTo(13, -20);
-      ctx.moveTo(-12, -52);
-      ctx.lineTo(12, -52);
-      ctx.stroke();
+      // Anillos orbitales en perspectiva en la base
+      for (let i = 0; i < 3; i++) {
+        const rx = 38 + i * 14 + Math.sin(t * 3 + i) * 2;
+        const ry = rx * 0.24;
+        ctx.strokeStyle = i === 0
+          ? "rgba(186, 230, 253, 0.85)"
+          : `rgba(56, 189, 248, ${0.45 - i * 0.1})`;
+        ctx.lineWidth = i === 0 ? 1.8 : 1.1;
+        ctx.beginPath();
+        ctx.ellipse(cx, baseY + i * 2, rx, ry, 0, 0, Math.PI * 2);
+        ctx.stroke();
+      }
 
-      // Cabello corto característico
-      ctx.fillStyle = "rgba(14, 165, 233, 0.85)";
+      // Núcleo brillante del emisor
+      const core = ctx.createRadialGradient(cx, baseY, 1, cx, baseY, 32);
+      core.addColorStop(0, "rgba(255, 255, 255, 0.95)");
+      core.addColorStop(0.4, "rgba(56, 189, 248, 0.65)");
+      core.addColorStop(1, "rgba(56, 189, 248, 0)");
+      ctx.fillStyle = core;
       ctx.beginPath();
-      ctx.moveTo(-21, -102);
-      ctx.quadraticCurveTo(-25, -135, 0, -139);
-      ctx.quadraticCurveTo(25, -135, 21, -102);
-      ctx.lineTo(15, -96);
-      ctx.lineTo(13, -115);
-      ctx.lineTo(-13, -115);
-      ctx.lineTo(-15, -96);
-      ctx.closePath();
-      ctx.fill();
-      ctx.stroke();
-
-      // Rostro
-      ctx.fillStyle = "rgba(125, 211, 252, 0.55)";
-      ctx.beginPath();
-      ctx.ellipse(0, -112, 12.5, 16, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.stroke();
-
-      // Ojos brillantes
-      ctx.fillStyle = "#ffffff";
-      ctx.beginPath();
-      ctx.ellipse(-4.8, -113, 2.2, 1.2, 0, 0, Math.PI * 2);
-      ctx.ellipse(4.8, -113, 2.2, 1.2, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Modulación de voz
-      const mouthH = (isSpeaking && currentSpeaker === "cortana")
-        ? Math.abs(Math.sin(t * 20)) * 2.2 + 0.8
-        : 0.7;
-      ctx.beginPath();
-      ctx.ellipse(0, -102, 3.2, mouthH * 0.5, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx, baseY, 32, 9, 0, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.restore();
     }
 
-    function drawScene01_Deployment(w, h, t) {
-      // Fondo cielo orbital + Anillo de Halo gigante (igual a la primera toma del video)
+    // Dibujo de Cortana de alta calidad con flujo de código interno y articulación
+    function drawCortanaHQ(cx, baseY, scale, t, options = {}) {
+      const { gesture = "idle", glitchX = 0, facing = 1 } = options;
+
+      ctx.save();
+      ctx.translate(cx + glitchX, baseY);
+      ctx.scale(scale * facing, scale);
+
+      const breathe = Math.sin(t * 2.4) * 2.2;
+      const headTilt = Math.sin(t * 1.5) * 0.035;
+      ctx.translate(0, breathe);
+
+      // Definición de la ruta anatómica del cuerpo para aplicar clipping de código
+      function defineBodyPath() {
+        ctx.beginPath();
+        // Base difuminada de cintura/cadera
+        ctx.moveTo(-28, -8);
+        ctx.bezierCurveTo(-28, -32, -22, -48, -26, -66);
+        // Hombros estilizados
+        ctx.bezierCurveTo(-29, -76, -18, -82, -8, -85);
+        // Cuello
+        ctx.lineTo(-6, -98);
+        ctx.lineTo(6, -98);
+        ctx.lineTo(8, -85);
+        ctx.bezierCurveTo(18, -82, 29, -76, 26, -66);
+        ctx.bezierCurveTo(22, -48, 28, -32, 28, -8);
+        ctx.closePath();
+      }
+
+      // 1. Resplandor exterior volumétrico
+      ctx.save();
+      ctx.shadowColor = "#38bdf8";
+      ctx.shadowBlur = 22;
+      const bodyGrad = ctx.createLinearGradient(0, -155, 0, -6);
+      bodyGrad.addColorStop(0, "rgba(186, 230, 253, 0.85)");
+      bodyGrad.addColorStop(0.45, "rgba(14, 165, 233, 0.62)");
+      bodyGrad.addColorStop(0.85, "rgba(2, 132, 199, 0.25)");
+      bodyGrad.addColorStop(1, "rgba(2, 132, 199, 0)");
+
+      defineBodyPath();
+      ctx.fillStyle = bodyGrad;
+      ctx.fill();
+      ctx.restore();
+
+      // 2. Matriz de código binario/hexadecimal fluyendo dentro de su cuerpo
+      ctx.save();
+      defineBodyPath();
+      ctx.clip();
+
+      ctx.fillStyle = "rgba(186, 230, 253, 0.55)";
+      ctx.font = "700 6px Orbitron, monospace";
+      matrixColumns.forEach((col, cIdx) => {
+        for (let row = 0; row < 12; row++) {
+          const yPos = -96 + ((row * 9 + t * col.speed + col.offset) % 92);
+          const ch = hexChars[(cIdx + row + Math.floor(t * 4)) % hexChars.length];
+          ctx.fillText(ch, col.x, yPos);
+        }
+      });
+
+      // Líneas de circuitos cibernéticos de Halo Reach
+      ctx.strokeStyle = "rgba(224, 242, 254, 0.78)";
+      ctx.lineWidth = 1.1;
+      ctx.beginPath();
+      // Clavículas y núcleo pectoral
+      ctx.moveTo(-20, -76);
+      ctx.lineTo(-8, -68);
+      ctx.lineTo(0, -64);
+      ctx.lineTo(8, -68);
+      ctx.lineTo(20, -76);
+      // Líneas verticales de flujo
+      ctx.moveTo(-12, -66);
+      ctx.lineTo(-9, -44);
+      ctx.lineTo(-14, -18);
+      ctx.moveTo(12, -66);
+      ctx.lineTo(9, -44);
+      ctx.lineTo(14, -18);
+      ctx.moveTo(0, -64);
+      ctx.lineTo(0, -24);
+      ctx.stroke();
+      ctx.restore();
+
+      // 3. Contorno luminoso nítido del torso
+      ctx.save();
+      defineBodyPath();
+      ctx.strokeStyle = "rgba(186, 230, 253, 0.9)";
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+      ctx.restore();
+
+      // 4. Brazo articulado (gesto hacia HUD o presentación)
+      ctx.save();
+      ctx.strokeStyle = "rgba(125, 211, 252, 0.92)";
+      ctx.fillStyle = "rgba(56, 189, 248, 0.45)";
+      ctx.lineWidth = 4.2;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+
+      if (gesture === "point") {
+        // Brazo extendido señalando los datos tácticos
+        const wave = Math.sin(t * 3) * 2;
+        ctx.beginPath();
+        ctx.moveTo(23, -72);
+        ctx.lineTo(42, -62);
+        ctx.lineTo(62, -74 + wave);
+        ctx.stroke();
+
+        // Destello en la punta de los dedos interactuando con el holograma
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(64, -75 + wave, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        // Postura natural elegante
+        ctx.beginPath();
+        ctx.moveTo(23, -72);
+        ctx.quadraticCurveTo(31, -50, 25, -28);
+        ctx.moveTo(-23, -72);
+        ctx.quadraticCurveTo(-31, -50, -25, -28);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // 5. Cabeza, cabello estilo Halo Reach y rostro expresivo
+      ctx.save();
+      ctx.translate(0, -114);
+      ctx.rotate(headTilt);
+
+      // Cabello posterior y flequillo lateral característico
+      ctx.fillStyle = "rgba(2, 132, 199, 0.85)";
+      ctx.strokeStyle = "#bae6fd";
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(-18, 8);
+      ctx.bezierCurveTo(-24, -10, -20, -28, 0, -29);
+      ctx.bezierCurveTo(20, -28, 24, -10, 18, 8);
+      ctx.lineTo(14, 12);
+      ctx.lineTo(13, -8);
+      ctx.lineTo(3, -15);
+      ctx.lineTo(-12, -10);
+      ctx.lineTo(-14, 12);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // Óvalo facial con sombreado holográfico
+      const faceGrad = ctx.createRadialGradient(0, -2, 2, 0, 0, 18);
+      faceGrad.addColorStop(0, "rgba(186, 230, 253, 0.72)");
+      faceGrad.addColorStop(1, "rgba(14, 165, 233, 0.35)");
+      ctx.fillStyle = faceGrad;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 11.5, 15.5, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      // Cejas y ojos luminosos
+      ctx.strokeStyle = "#e0f2fe";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(-7.5, -5.5);
+      ctx.lineTo(-2.5, -4.8);
+      ctx.moveTo(2.5, -4.8);
+      ctx.lineTo(7.5, -5.5);
+      ctx.stroke();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "#38bdf8";
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.ellipse(-4.5, -2.2, 2.2, 1.15, -0.08, 0, Math.PI * 2);
+      ctx.ellipse(4.5, -2.2, 2.2, 1.15, 0.08, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Sincronización labial cuando habla Cortana
+      const mouthOpen = (isSpeaking && currentSpeaker === "cortana")
+        ? Math.abs(Math.sin(t * 22)) * 2.1 + 0.6
+        : 0.5;
+      ctx.fillStyle = "rgba(224, 242, 254, 0.92)";
+      ctx.beginPath();
+      ctx.ellipse(0, 7.5, 3.1, mouthOpen * 0.55, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.restore();
+      ctx.restore();
+    }
+
+    // Partículas flotantes ascendentes alrededor del holograma
+    function drawHoloParticles(cx, baseY, t) {
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+      dataParticles.forEach((p, idx) => {
+        const y = baseY - ((p.y + t * p.speed) % 185);
+        const x = cx + p.x + Math.sin(t * 2 + idx) * 6;
+        ctx.fillStyle = `rgba(125, 211, 252, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(x, y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.restore();
+    }
+
+    // =========================================================
+    // ESCENA 01: DESPLIEGUE ORBITAL (ANILLO HALO + CASCO SPARTAN)
+    // =========================================================
+    function drawScene01(w, h, t) {
+      // Cielo espacial profundo
       const sky = ctx.createLinearGradient(0, 0, 0, h);
-      sky.addColorStop(0, "#0b192c");
+      sky.addColorStop(0, "#050d1d");
+      sky.addColorStop(0.65, "#0a1c36");
       sky.addColorStop(1, "#030711");
       ctx.fillStyle = sky;
       ctx.fillRect(0, 0, w, h);
 
-      // Gran anillo de Halo cruzando el cielo
+      // Estrellas centelleantes
+      stars.forEach((s) => {
+        const alpha = 0.35 + Math.sin(t * 3 + s.phase) * 0.35;
+        ctx.fillStyle = `rgba(224, 242, 254, ${alpha})`;
+        ctx.fillRect(s.x * w, s.y * h, s.r, s.r);
+      });
+
+      // Gran Anillo de Halo en el cielo con detalle de estructura y atmósfera
       ctx.save();
-      ctx.strokeStyle = "rgba(186, 230, 253, 0.22)";
-      ctx.lineWidth = 18;
+      const ringCx = w * 0.14;
+      const ringCy = h * 0.78;
+      const ringR = 235;
+
+      // Brillo atmosférico del anillo
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.16)";
+      ctx.lineWidth = 28;
       ctx.beginPath();
-      ctx.arc(w * 0.18, h * 0.65, 195, -1.35, -0.15);
+      ctx.arc(ringCx, ringCy, ringR, -1.42, -0.05);
+      ctx.stroke();
+
+      // Banda metálica exterior
+      ctx.strokeStyle = "rgba(148, 163, 184, 0.48)";
+      ctx.lineWidth = 14;
+      ctx.beginPath();
+      ctx.arc(ringCx, ringCy, ringR, -1.42, -0.05);
+      ctx.stroke();
+
+      // Franja interior iluminada (continentes y océanos del anillo)
+      ctx.strokeStyle = "rgba(125, 211, 252, 0.72)";
+      ctx.lineWidth = 5;
+      ctx.setLineDash([14, 6, 4, 6]);
+      ctx.beginPath();
+      ctx.arc(ringCx, ringCy, ringR - 2, -1.42, -0.05);
       ctx.stroke();
       ctx.restore();
 
-      // Silueta del casco Spartan a la derecha + haz holográfico en su mano
+      // Silueta detallada del Casco Spartan MJOLNIR Mark V [B] a la derecha
       ctx.save();
-      ctx.fillStyle = "rgba(30, 48, 38, 0.78)";
-      ctx.strokeStyle = "rgba(74, 222, 128, 0.35)";
+      const sx = w * 0.78;
+      const sy = h * 0.44;
+      const chiefGlow = (isSpeaking && currentSpeaker === "chief") ? 0.85 : 0.4;
+
+      // Hombrera y peto Spartan
+      const armorGrad = ctx.createLinearGradient(sx - 50, sy, sx + 50, h);
+      armorGrad.addColorStop(0, "#1e3326");
+      armorGrad.addColorStop(1, "#09120d");
+      ctx.fillStyle = armorGrad;
+      ctx.strokeStyle = `rgba(74, 222, 128, ${chiefGlow})`;
       ctx.lineWidth = 1.5;
+
       ctx.beginPath();
-      ctx.arc(w * 0.74, h * 0.42, 46, Math.PI * 0.85, Math.PI * 2.15);
-      ctx.lineTo(w * 0.88, h);
-      ctx.lineTo(w * 0.58, h);
+      ctx.moveTo(sx - 68, h - 60);
+      ctx.quadraticCurveTo(sx - 55, sy + 36, sx - 22, sy + 28);
+      ctx.lineTo(sx + 28, sy + 28);
+      ctx.quadraticCurveTo(sx + 58, sy + 42, sx + 68, h - 60);
       ctx.closePath();
       ctx.fill();
       ctx.stroke();
 
-      // Visor dorado del Spartan
-      ctx.fillStyle = "rgba(245, 158, 11, 0.65)";
+      // Casco Spartan
       ctx.beginPath();
-      ctx.ellipse(w * 0.71, h * 0.41, 24, 11, -0.12, 0, Math.PI * 2);
+      ctx.moveTo(sx - 34, sy + 18);
+      ctx.bezierCurveTo(sx - 42, sy - 24, sx - 12, sy - 42, sx + 16, sy - 36);
+      ctx.bezierCurveTo(sx + 38, sy - 30, sx + 42, sy + 4, sx + 32, sy + 24);
+      ctx.lineTo(sx - 18, sy + 26);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // Visor dorado reflectante (refleja el brillo azul de Cortana)
+      const visorGrad = ctx.createLinearGradient(sx - 34, sy - 10, sx + 12, sy + 8);
+      visorGrad.addColorStop(0, "#38bdf8");
+      visorGrad.addColorStop(0.45, "#f59e0b");
+      visorGrad.addColorStop(1, "#b45309");
+      ctx.fillStyle = visorGrad;
+      ctx.beginPath();
+      ctx.moveTo(sx - 33, sy - 6);
+      ctx.quadraticCurveTo(sx - 12, sy - 18, sx + 10, sy - 8);
+      ctx.lineTo(sx + 4, sy + 7);
+      ctx.quadraticCurveTo(sx - 16, sy + 10, sx - 31, sy + 3);
+      ctx.closePath();
       ctx.fill();
       ctx.restore();
 
-      // Base emisora y Cortana materializándose a la izquierda
+      // Proyector y Cortana materializándose a la izquierda
       const cx = w * 0.34;
       const baseY = h - 72;
-
-      const beam = ctx.createLinearGradient(cx, baseY, cx, 24);
-      beam.addColorStop(0, "rgba(56, 189, 248, 0.45)");
-      beam.addColorStop(1, "rgba(56, 189, 248, 0)");
-      ctx.fillStyle = beam;
-      ctx.beginPath();
-      ctx.moveTo(cx - 28, baseY);
-      ctx.lineTo(cx - 65, 24);
-      ctx.lineTo(cx + 65, 24);
-      ctx.lineTo(cx + 28, baseY);
-      ctx.closePath();
-      ctx.fill();
+      drawHoloPedestal(cx, baseY, t, materialize);
+      drawHoloParticles(cx, baseY, t);
 
       ctx.save();
-      const revealH = materialize * 170;
+      const revealH = materialize * 175;
       ctx.beginPath();
-      ctx.rect(0, baseY - revealH, w, revealH + 10);
+      ctx.rect(0, baseY - revealH, w, revealH + 12);
       ctx.clip();
-      const glitch = Math.random() > 0.95 ? (Math.random() - 0.5) * 6 : 0;
-      drawCortana(cx, baseY, 0.95, t, glitch);
+      const glitch = Math.random() > 0.96 ? (Math.random() - 0.5) * 6 : 0;
+      drawCortanaHQ(cx, baseY, 0.98, t, { gesture: "idle", glitchX: glitch });
       ctx.restore();
     }
 
-    function drawScene02_TacticalHorizon(w, h, t) {
-      // Escaneo topográfico rojo/naranja + cielo azul (inspirado en 0:13 - 0:20 del video)
+    // =========================================================
+    // ESCENA 02: TERRENO TÁCTICO 3D Y CRONÓMETRO 1900 HRS
+    // =========================================================
+    function drawScene02(w, h, t) {
       const bg = ctx.createLinearGradient(0, 0, 0, h);
-      bg.addColorStop(0, "#0c2442");
-      bg.addColorStop(0.55, "#1e3a5f");
-      bg.addColorStop(1, "#2a0e08");
+      bg.addColorStop(0, "#051024");
+      bg.addColorStop(0.48, "#0c2240");
+      bg.addColorStop(1, "#1c0905");
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, w, h);
 
-      // Malla topográfica naranja/roja holográfica a la izquierda
+      // Malla de terreno en perspectiva 3D real (elevaciones rojo/naranja táctico)
       ctx.save();
-      ctx.strokeStyle = "rgba(249, 115, 22, 0.55)";
-      ctx.fillStyle = "rgba(234, 88, 12, 0.18)";
-      ctx.lineWidth = 1.2;
-      for (let row = 0; row < 5; row++) {
+      const horizonY = h * 0.42;
+      const cols = 18;
+      const rows = 12;
+      const scrollZ = (t * 2.2) % 1;
+
+      function project3D(gx, gz) {
+        const depth = gz + 0.6;
+        const scale = 1.6 / depth;
+        const sx = w * 0.36 + gx * 42 * scale;
+        const elevation =
+          Math.sin(gx * 0.8 + gz * 0.9 + t * 1.5) * 14 +
+          Math.cos(gx * 1.4 - gz * 0.7) * 10;
+        const sy = horizonY + (52 - elevation) * scale;
+        return { x: sx, y: sy, elev: elevation };
+      }
+
+      for (let r = 0; r < rows; r++) {
+        const gz = r - scrollZ + 0.5;
+        if (gz <= 0.1) continue;
         ctx.beginPath();
-        const yBase = h * 0.46 + row * 14;
-        ctx.moveTo(0, yBase);
-        for (let x = 0; x <= w * 0.65; x += 22) {
-          const wave = Math.sin(x * 0.03 + t * 2 + row) * 8;
-          ctx.lineTo(x, yBase + wave);
+        let maxElev = -20;
+        for (let c = -cols / 2; c <= cols / 2; c++) {
+          const p = project3D(c, gz);
+          if (p.elev > maxElev) maxElev = p.elev;
+          if (c === -cols / 2) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
         }
+        const alpha = Math.max(0.08, 0.65 - r * 0.045);
+        ctx.strokeStyle = maxElev > 6
+          ? `rgba(249, 115, 22, ${alpha})`
+          : `rgba(56, 189, 248, ${alpha * 0.7})`;
+        ctx.lineWidth = 1.1;
         ctx.stroke();
       }
       ctx.restore();
 
-      // Tarjeta HUD de Fecha y Hora (1900 HRS)
+      // Cortana señalando el panel táctico de Fecha y Hora
+      const cx = w * 0.75;
+      const baseY = h - 68;
+      drawHoloPedestal(cx, baseY, t, 1);
+      drawCortanaHQ(cx, baseY, 1.02, t, { gesture: "point", facing: -1 });
+
+      // Panel HUD flotante de Fecha y Hora (1900 HRS)
       ctx.save();
-      const boxX = 16;
-      const boxY = 26;
-      ctx.fillStyle = "rgba(4, 12, 26, 0.82)";
-      ctx.strokeStyle = "#38bdf8";
+      const floatY = Math.sin(t * 2.6) * 3;
+      const bx = 16;
+      const by = 24 + floatY;
+      const bw = 205;
+      const bh = 78;
+
+      ctx.fillStyle = "rgba(4, 12, 28, 0.86)";
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.85)";
       ctx.lineWidth = 1.4;
-      ctx.beginPath();
-      ctx.roundRect(boxX, boxY, 185, 68, 8);
+      drawRoundRect(bx, by, bw, bh, 8);
       ctx.fill();
       ctx.stroke();
 
+      // Esquinas tácticas iluminadas
+      ctx.strokeStyle = "#f97316";
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.moveTo(bx, by + 14);
+      ctx.lineTo(bx, by);
+      ctx.lineTo(bx + 14, by);
+      ctx.moveTo(bx + bw - 14, by + bh);
+      ctx.lineTo(bx + bw, by + bh);
+      ctx.lineTo(bx + bw, by + bh - 14);
+      ctx.stroke();
+
       ctx.fillStyle = "#f97316";
-      ctx.font = "700 10px Orbitron, sans-serif";
-      ctx.fillText("OBJETIVO TEMPORAL", boxX + 12, boxY + 20);
+      ctx.font = "700 9px Orbitron, sans-serif";
+      ctx.fillText("PROTOCOLO TEMPORAL // ACTIVO", bx + 12, by + 19);
 
       ctx.fillStyle = "#ffffff";
-      ctx.font = "900 15px Orbitron, sans-serif";
-      ctx.fillText("SÁB 21 NOV // 1900H", boxX + 12, boxY + 42);
+      ctx.font = "900 16px Orbitron, sans-serif";
+      ctx.fillText("SÁB 21 NOV • 1900H", bx + 12, by + 42);
 
       ctx.fillStyle = "#7dd3fc";
-      ctx.font = "600 11px Rajdhani, sans-serif";
-      ctx.fillText("7:00 PM • HORA OFICIAL COLOMBIA", boxX + 12, boxY + 58);
+      ctx.font = "700 11px Rajdhani, sans-serif";
+      ctx.fillText("7:00 PM EN PUNTO (HORA COLOMBIA)", bx + 12, by + 61);
       ctx.restore();
-
-      // Cortana supervisando desde la derecha
-      drawCortana(w * 0.72, h - 62, 1.08, t);
     }
 
-    function drawScene03_SatelliteMap(w, h, t) {
-      // Mapa satelital topográfico estilo Halo (0:27 - 0:32 del video)
-      ctx.fillStyle = "#06131c";
+    // =========================================================
+    // ESCENA 03: RECONOCIMIENTO SATELITAL & WAYPOINT HALO
+    // =========================================================
+    function drawScene03(w, h, t) {
+      ctx.fillStyle = "#030c17";
       ctx.fillRect(0, 0, w, h);
 
-      // Curvas de nivel topográficas y carreteras
-      ctx.save();
-      ctx.strokeStyle = "rgba(56, 189, 248, 0.22)";
+      // Rejilla satelital de fondo
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.08)";
       ctx.lineWidth = 1;
-      for (let i = 1; i <= 7; i++) {
+      for (let x = 0; x < w; x += 26) {
         ctx.beginPath();
-        ctx.ellipse(w * 0.52, h * 0.44, i * 36, i * 21, -0.25, 0, Math.PI * 2);
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+      for (let y = 0; y < h; y += 26) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
         ctx.stroke();
       }
 
-      // Trazo de la Variante La Romelia - El Pollo
-      ctx.strokeStyle = "rgba(250, 204, 21, 0.75)";
-      ctx.lineWidth = 3;
+      // Esfera orbital rotatoria a la izquierda
+      const gx = w * 0.22;
+      const gy = h * 0.42;
+      const gr = 44;
+      ctx.save();
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.42)";
+      ctx.lineWidth = 1.1;
       ctx.beginPath();
-      ctx.moveTo(0, h * 0.65);
-      ctx.quadraticCurveTo(w * 0.45, h * 0.48, w, h * 0.25);
+      ctx.arc(gx, gy, gr, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Encabezado "UBICACIONES DESCUBIERTAS"
-      ctx.fillStyle = "rgba(186, 230, 253, 0.85)";
-      ctx.font = "700 10px Orbitron, sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText("UBICACIONES DESCUBIERTAS // SECTOR PEREIRA - DOSQUEBRADAS", w / 2, 22);
+      for (let i = 0; i < 3; i++) {
+        const rx = Math.abs(Math.cos(t * 0.9 + i * 1.05)) * gr;
+        ctx.beginPath();
+        ctx.ellipse(gx, gy, rx, gr, 0.25, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.restore();
 
-      // Marcador táctico pulsante en CDA Villa
-      const pinX = w * 0.52;
+      // Corredor vial La Romelia - El Pollo y curvas de nivel
+      const pinX = w * 0.62;
       const pinY = h * 0.44;
-      const pulseR = 12 + Math.sin(t * 6) * 5;
 
-      ctx.strokeStyle = "#f97316";
+      ctx.save();
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.22)";
+      for (let i = 1; i <= 4; i++) {
+        ctx.beginPath();
+        ctx.ellipse(pinX, pinY, i * 32, i * 18, -0.2, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Carretera principal iluminada
+      ctx.strokeStyle = "rgba(250, 204, 21, 0.85)";
+      ctx.lineWidth = 3.2;
+      ctx.beginPath();
+      ctx.moveTo(w * 0.28, h * 0.68);
+      ctx.quadraticCurveTo(w * 0.56, h * 0.48, w, h * 0.22);
+      ctx.stroke();
+
+      // Haz de triangulación desde el satélite al punto exacto
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.55)";
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      ctx.moveTo(gx + 30, gy - 15);
+      ctx.lineTo(pinX, pinY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Marcador clásico tipo Diamante de Objetivo Halo (Waypoint)
+      const bob = Math.sin(t * 5) * 4;
+      const wy = pinY - 26 + bob;
+
+      // Ondas de radar en el suelo
+      const radarR = ((t * 36) % 34) + 6;
+      ctx.strokeStyle = `rgba(249, 115, 22, ${1 - radarR / 40})`;
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(pinX, pinY, pulseR, 0, Math.PI * 2);
+      ctx.ellipse(pinX, pinY, radarR, radarR * 0.5, 0, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.fillStyle = "#f97316";
+      // Diamante azul/naranja
+      ctx.fillStyle = "rgba(249, 115, 22, 0.92)";
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.arc(pinX, pinY, 5, 0, Math.PI * 2);
+      ctx.moveTo(pinX, wy - 12);
+      ctx.lineTo(pinX + 10, wy);
+      ctx.lineTo(pinX, wy + 12);
+      ctx.lineTo(pinX - 10, wy);
+      ctx.closePath();
       ctx.fill();
+      ctx.stroke();
 
-      // Etiqueta del punto
-      ctx.fillStyle = "rgba(3, 10, 22, 0.88)";
+      // Cabecera superior
+      ctx.fillStyle = "#bae6fd";
+      ctx.font = "700 9.5px Orbitron, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("UBICACIONES DESCUBIERTAS // OBJETIVO FIJADO", w / 2, 20);
+
+      // Tarjeta de coordenadas abajo del pin
+      ctx.fillStyle = "rgba(3, 10, 22, 0.92)";
       ctx.strokeStyle = "#38bdf8";
-      ctx.lineWidth = 1.2;
-      ctx.beginPath();
-      ctx.roundRect(pinX - 115, pinY + 14, 230, 34, 6);
+      ctx.lineWidth = 1.3;
+      drawRoundRect(pinX - 118, pinY + 12, 236, 36, 6);
       ctx.fill();
       ctx.stroke();
 
       ctx.fillStyle = "#ffffff";
-      ctx.font = "700 10px Orbitron, sans-serif";
-      ctx.fillText("KM 7 VÍA LA ROMELIA - EL POLLO", pinX, pinY + 29);
-      ctx.fillStyle = "#7dd3fc";
-      ctx.font = "600 10px Rajdhani, sans-serif";
-      ctx.fillText("AL FRENTE DEL CDA VILLA", pinX, pinY + 42);
+      ctx.font = "700 9.5px Orbitron, sans-serif";
+      ctx.fillText("KM 7 VÍA LA ROMELIA – EL POLLO", pinX, pinY + 27);
+      ctx.fillStyle = "#f97316";
+      ctx.font = "700 10px Rajdhani, sans-serif";
+      ctx.fillText("AL FRENTE DEL CDA VILLA • TARGET LOCKED", pinX, pinY + 41);
       ctx.restore();
     }
 
-    function drawScene04_InsertChip(w, h, t) {
-      // Escena final con Cortana + destello azul de "INSERT CHIP" (0:34 - 0:45 del video)
-      const bg = ctx.createRadialGradient(w * 0.5, h * 0.45, 10, w * 0.5, h * 0.45, w * 0.7);
-      bg.addColorStop(0, "#0c2d48");
+    // =========================================================
+    // ESCENA 04: • INSERT CHIP (CHIP 3D + DESTELLO ANAMÓRFICO)
+    // =========================================================
+    function drawScene04(w, h, t) {
+      const bg = ctx.createRadialGradient(w * 0.65, h * 0.42, 10, w * 0.5, h * 0.45, w * 0.75);
+      bg.addColorStop(0, "#0d3559");
+      bg.addColorStop(0.55, "#051326");
       bg.addColorStop(1, "#02050c");
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, w, h);
 
       // Cortana a la izquierda despidiéndose
-      drawCortana(w * 0.3, h - 62, 1.0, t);
+      const cx = w * 0.28;
+      const baseY = h - 68;
+      drawHoloPedestal(cx, baseY, t, 1);
+      drawHoloParticles(cx, baseY, t);
+      drawCortanaHQ(cx, baseY, 1.0, t, { gesture: "point", facing: 1 });
 
-      // Chip de IA + Destello óptico azul intenso a la derecha
+      // Chip de IA 3D rotatorio a la derecha
       const chipX = w * 0.68;
-      const chipY = h * 0.42;
+      const chipY = h * 0.41 + Math.sin(t * 2.8) * 3;
+      const rotW = Math.max(12, Math.abs(Math.cos(t * 1.6)) * 26);
 
-      // Destello horizontal tipo lens flare del video
-      const flare = ctx.createLinearGradient(chipX - 95, chipY, chipX + 95, chipY);
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+
+      // Anillos de expansión del chip
+      const pulse = (t * 45) % 52;
+      ctx.strokeStyle = `rgba(56, 189, 248, ${1 - pulse / 52})`;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(chipX, chipY, 18 + pulse, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Destello óptico anamórfico horizontal (lens flare estilo Halo)
+      const flare = ctx.createLinearGradient(chipX - 115, chipY, chipX + 115, chipY);
       flare.addColorStop(0, "rgba(56, 189, 248, 0)");
-      flare.addColorStop(0.5, "rgba(186, 230, 253, 0.95)");
+      flare.addColorStop(0.5, "rgba(224, 242, 254, 0.95)");
       flare.addColorStop(1, "rgba(56, 189, 248, 0)");
       ctx.fillStyle = flare;
-      ctx.fillRect(chipX - 95, chipY - 3, 190, 6);
+      ctx.fillRect(chipX - 115, chipY - 2.5, 230, 5);
 
-      // Núcleo luminoso
-      const glow = ctx.createRadialGradient(chipX, chipY, 2, chipX, chipY, 42);
-      glow.addColorStop(0, "rgba(255, 255, 255, 0.95)");
-      glow.addColorStop(0.4, "rgba(56, 189, 248, 0.75)");
-      glow.addColorStop(1, "rgba(56, 189, 248, 0)");
-      ctx.fillStyle = glow;
+      // Cuerpo prismático del Chip de Datos UNSC
+      ctx.fillStyle = "rgba(14, 165, 233, 0.55)";
+      ctx.strokeStyle = "#bae6fd";
+      ctx.lineWidth = 1.6;
       ctx.beginPath();
-      ctx.arc(chipX, chipY, 42, 0, Math.PI * 2);
+      ctx.moveTo(chipX - rotW, chipY - 22);
+      ctx.lineTo(chipX + rotW * 0.6, chipY - 26);
+      ctx.lineTo(chipX + rotW, chipY - 16);
+      ctx.lineTo(chipX + rotW, chipY + 22);
+      ctx.lineTo(chipX - rotW, chipY + 22);
+      ctx.closePath();
       ctx.fill();
+      ctx.stroke();
 
-      // Texto HUD "• INSERT CHIP" igual al video
+      // Contactos dorados inferiores del chip
+      ctx.fillStyle = "#fbbf24";
+      ctx.fillRect(chipX - rotW * 0.65, chipY + 16, rotW * 1.3, 5);
+
+      // Núcleo brillante central
+      const coreGlow = ctx.createRadialGradient(chipX, chipY, 1, chipX, chipY, 26);
+      coreGlow.addColorStop(0, "rgba(255, 255, 255, 0.95)");
+      coreGlow.addColorStop(0.5, "rgba(56, 189, 248, 0.6)");
+      coreGlow.addColorStop(1, "rgba(56, 189, 248, 0)");
+      ctx.fillStyle = coreGlow;
+      ctx.beginPath();
+      ctx.arc(chipX, chipY, 26, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      // Etiqueta HUD "• INSERT CHIP"
       ctx.fillStyle = "#ffffff";
       ctx.font = "700 11px Orbitron, sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("• INSERT CHIP", chipX, chipY + 48);
+      ctx.fillText("• INSERT CHIP", chipX, chipY + 46);
     }
 
+    // =========================================================
+    // BUCLE PRINCIPAL DE ANIMACIÓN Y POST-PROCESADO HOLOGRÁFICO
+    // =========================================================
     function animate(now) {
       const w = canvas.getBoundingClientRect().width;
       const h = canvas.getBoundingClientRect().height;
@@ -1234,7 +1613,7 @@
       const scene = scenes[currentScene];
       const elapsed = now - sceneStart;
 
-      // Disparar subtítulos y voces sincronizadas dentro de cada escena
+      // Sincronización de subtítulos y voces
       scene.steps.forEach((step, idx) => {
         if (elapsed >= step.at && !triggeredSteps.has(idx)) {
           triggeredSteps.add(idx);
@@ -1250,21 +1629,56 @@
       }
 
       if (materialize < 1) {
-        materialize = Math.min(materialize + 0.022, 1);
+        materialize = Math.min(materialize + 0.024, 1);
+      }
+      if (transitionGlitch > 0) {
+        transitionGlitch = Math.max(0, transitionGlitch - 0.045);
       }
 
       ctx.clearRect(0, 0, w, h);
 
-      if (currentScene === 0) drawScene01_Deployment(w, h, t);
-      else if (currentScene === 1) drawScene02_TacticalHorizon(w, h, t);
-      else if (currentScene === 2) drawScene03_SatelliteMap(w, h, t);
-      else drawScene04_InsertChip(w, h, t);
+      // Micro-movimiento de cámara cinemática (parallax suave)
+      ctx.save();
+      const camX = Math.sin(t * 0.9) * 2.2;
+      const camY = Math.cos(t * 1.1) * 1.6;
+      ctx.translate(camX, camY);
 
-      // Líneas de escaneo holográfico sutiles
+      if (currentScene === 0) drawScene01(w, h, t);
+      else if (currentScene === 1) drawScene02(w, h, t);
+      else if (currentScene === 2) drawScene03(w, h, t);
+      else drawScene04(w, h, t);
+
+      ctx.restore();
+
+      // Efecto de interferencia holográfica al cambiar de escena
+      if (transitionGlitch > 0) {
+        ctx.save();
+        ctx.globalCompositeOperation = "lighter";
+        const sliceY = Math.random() * (h - 40);
+        const shift = (Math.random() - 0.5) * 24 * transitionGlitch;
+        ctx.fillStyle = `rgba(56, 189, 248, ${0.22 * transitionGlitch})`;
+        ctx.fillRect(shift, sliceY, w, 14);
+        ctx.fillStyle = `rgba(249, 115, 22, ${0.16 * transitionGlitch})`;
+        ctx.fillRect(-shift, sliceY + 18, w, 6);
+        ctx.restore();
+      }
+
+      // Barrido láser vertical continuo + líneas de escaneo CRT
+      const laserY = (t * 95) % (h - 62);
+      ctx.fillStyle = "rgba(125, 211, 252, 0.08)";
+      ctx.fillRect(0, laserY, w, 2);
+
       ctx.fillStyle = "rgba(56, 189, 248, 0.03)";
       for (let y = 0; y < h; y += 4) {
         ctx.fillRect(0, y, w, 1);
       }
+
+      // Viñeta cinematográfica en los bordes del visor
+      const vignette = ctx.createRadialGradient(w / 2, h / 2, w * 0.3, w / 2, h / 2, w * 0.72);
+      vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
+      vignette.addColorStop(1, "rgba(1, 4, 12, 0.55)");
+      ctx.fillStyle = vignette;
+      ctx.fillRect(0, 0, w, h);
 
       requestAnimationFrame(animate);
     }
